@@ -1,1 +1,15 @@
-<p>request-reset works!</p>
+
+
+<div class="w-50 m-auto mt-5  loginsc align-self-center">
+    <h1 class="text-center pt-3 ">Reset Password </h1>
+  <form [formGroup]='resetForm' class="w-100 container m-auto py-5" (ngSubmit)='ResetPass()'>
+        <div class="form-group">
+          <label class='label-color'for="">Email</label>
+          <input formControlName='email' type="email" class="form-control">
+          <div *ngIf="resetForm.controls.email.invalid&&resetForm.controls.email.touched "  class="alert alert-danger mt-2"> Email not vaild</div>
+        </div>
+        <button [disabled]='resetForm.invalid' class="btn btn-primary float-right " type="submit">Reset Password</button>
+        
+  </form>
+  </div>
+  

@@ -8,10 +8,10 @@ export class AuthService {
   constructor(private _http: HttpClient) {
   }
   baseUrl = "http://localhost:3000/";
-  // register(registerData:any):Observable<any>
-  // {
-  //  return this._http.post("http://localhost:3000/customerSignup",registerData);
-  // }
+  register(registerData:any):Observable<any>
+  {
+   return this._http.post(this.baseUrl+"customerSignup",registerData);
+  }
   login(loginData: any): Observable<any> {
     return this._http.post(this.baseUrl + "customerSignin", loginData);
   }

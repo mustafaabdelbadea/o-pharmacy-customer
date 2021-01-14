@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "request-reset.component.scss"
+    ],
+    "names": [],
+    "file": "request-reset.component.css"
+}

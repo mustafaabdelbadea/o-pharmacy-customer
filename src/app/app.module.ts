@@ -8,6 +8,7 @@ import { RequestResetComponent } from './request-reset/request-reset.component';
 import { ResponseResetComponent } from './response-reset/response-reset.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     SigninComponent,
     RequestResetComponent,
     ResponseResetComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,93 @@
-<div id="map"></div>
+<div class="w-50 m-auto mt-5  signupsc">
+    <h2 class="text-center pt-3">Sign Up </h2>
+    <form [formGroup]='signupForm' class="w-100 container m-auto py-5" (ngSubmit)='signUp()'>
+        <div class="form-group">
+            <label class='label-color' for="">Name</label>
+            <input formControlName='name' type="text" class="form-control">
+            <div *ngIf="signupForm.controls.name.invalid&&signupForm.controls.name.touched "
+                class="alert alert-danger mt-2"> name not vaild</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for=""> phone</label>
+            <input formControlName='phone' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.phone.invalid&&signupForm.controls.phone.touched "
+                class="alert alert-danger mt-2"> phone not vaild</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">Email</label>
+            <input formControlName='email' type="email" class="form-control">
+            <div *ngIf="signupForm.controls.email.invalid&&signupForm.controls.email.touched "
+                class="alert alert-danger mt-2"> Email not vaild</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">Password</label>
+            <input formControlName='password' type="password" class="form-control">
+            <div *ngIf="signupForm.controls.password.invalid&&signupForm.controls.password.touched "
+                class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six
+                letters</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">Confirm Password</label>
+            <input formControlName='confirmPassword' type="password" class="form-control">
+            <div *ngIf="signupForm.controls.confirmPassword.invalid&&signupForm.controls.confirmPassword.touched "
+                class="alert alert-danger mt-2"> Password not vaild at least one uppercase letter and number and six
+                letters</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">flat</label>
+            <input formControlName='flat' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.flat.invalid&&signupForm.controls.flat.touched "
+                class="alert alert-danger mt-2"> flat</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">floor</label>
+            <input formControlName='floor' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.floor.invalid&&signupForm.controls.floor.touched "
+                class="alert alert-danger mt-2"> floor</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">building</label>
+            <input formControlName='building' type="text" class="form-control">
+            <div *ngIf="signupForm.controls.building.invalid&&signupForm.controls.building.touched "
+                class="alert alert-danger mt-2"> building</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">locationAsAddress</label>
+            <input formControlName='locationAsAddress' type="text" class="form-control">
+            <div *ngIf="signupForm.controls.locationAsAddress.invalid&&signupForm.controls.locationAsAddress.touched "
+                class="alert alert-danger mt-2"> locationAsAddress</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">day</label>
+            <input formControlName='day' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.day.invalid&&signupForm.controls.day.touched "
+                class="alert alert-danger mt-2"> day</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">month</label>
+            <input formControlName='month' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.month.invalid&&signupForm.controls.month.touched "
+                class="alert alert-danger mt-2"> month</div>
+        </div>
+        <div class="form-group">
+            <label class='label-color' for="">year</label>
+            <input formControlName='year' type="number" class="form-control">
+            <div *ngIf="signupForm.controls.year.invalid&&signupForm.controls.year.touched "
+                class="alert alert-danger mt-2"> year</div>
+        </div>
+        <div class="form-group">
+            <input type="radio" value="male" formControlName="gender"> Male
+            <input type="radio" value="female" formControlName="gender"> Female
+        </div>
+
+        <a routerLink='/login'>Already have account , Sign In</a>
+        <button [disabled]='signupForm.invalid' class="btn btn-primary float-right " type="submit">Submit</button>
+
+    </form>
+
+    <div id="map"></div>
+
+
+
+
+</div>

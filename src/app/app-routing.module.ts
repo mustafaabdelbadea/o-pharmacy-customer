@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ReportProblemComponent } from './report-problem/report-problem.component';
 import { RequestResetComponent } from './request-reset/request-reset.component';
 import { ResponseResetComponent } from './response-reset/response-reset.component';
 import { SigninComponent } from './signin/signin.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'requestreset', component: RequestResetComponent },
   { path: 'signup', component: SignupComponent },
+  {path:'reportProblem',component:ReportProblemComponent},
 
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },

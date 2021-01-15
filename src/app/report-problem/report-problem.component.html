@@ -1,0 +1,21 @@
+
+<div class="w-50 m-auto mt-5  loginsc align-self-center">
+    <h1 class="text-center pt-3 ">Report problem </h1>
+  <form [formGroup]='reoportForm' class="w-100 container m-auto py-5" (ngSubmit)='report()'>
+        <div class="form-group">
+          <label class='label-color'for="">problem</label>
+
+          <textarea class="form-control" formControlName='problem' aria-label="With textarea"></textarea>
+
+          
+          <div *ngIf="reoportForm.controls.problem.invalid&&reoportForm.controls.problem.touched "  class="alert alert-danger mt-2"> report</div>
+        </div>
+   
+        <button [disabled]='reoportForm.invalid' class="btn btn-primary float-right " type="submit">Report</button>
+        
+  </form>
+  </div>
+  
+
+
+   

@@ -10,6 +10,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
+import { HealthNewsComponent } from './health-news/health-news.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReportProblemComponent } from './report-problem/report-problem.componen
     ResponseResetComponent,
     VerifyEmailComponent,
     SignupComponent,
-    ReportProblemComponent
+    ReportProblemComponent,
+    HealthNewsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

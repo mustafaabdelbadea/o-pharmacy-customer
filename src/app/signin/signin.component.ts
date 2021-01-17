@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from "../services/auth.service";
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -20,6 +21,10 @@ export class SigninComponent implements OnInit {
       //check if res = success, logged in 
       if (data.message == 'success') {
         localStorage.setItem('token', data.token);
+      }
+      else if(data.message=='email not Verified'){
+        localStorage.setItem('token', data.token);
+        console.log(data.token)
       }
       else {
         //invalid email or password

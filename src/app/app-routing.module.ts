@@ -19,9 +19,9 @@ const routes: Routes = [
     //{ path: 'signin',canActivate:[AuthLoginGuard] , component: SigninComponent },
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
   {path:'reportProblem',component:ReportProblemComponent},
-  {path:'healthNews',component:HealthNewsComponent},
+  //{path:'healthNews',component:HealthNewsComponent},
 //check if logged in and email verified 
-  //{path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
+  {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
 
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },

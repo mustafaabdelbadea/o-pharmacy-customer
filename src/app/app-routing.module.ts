@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthLoginGuard } from './Guards/auth-login.guard';
+import { AuthGuard } from './Guards/auth.guard';
+import { VerifyGuard } from './Guards/verify.guard';
 import { HealthNewsComponent } from './health-news/health-news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
@@ -13,8 +16,12 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'requestreset', component: RequestResetComponent },
   { path: 'signup', component: SignupComponent },
+    //{ path: 'signin',canActivate:[AuthLoginGuard] , component: SigninComponent },
+  //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
   {path:'reportProblem',component:ReportProblemComponent},
   {path:'healthNews',component:HealthNewsComponent},
+//check if logged in and email verified 
+  //{path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
 
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },

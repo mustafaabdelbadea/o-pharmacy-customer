@@ -1,18 +1,18 @@
 <div class="d-flex justify-content-around row py-4 w-100">
 
-    <div *ngFor="let news of news.articles" class="card my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-4 " style=" width: 16rem;">
-        <img src="{{news.urlToImage}}" class="card-img-top" alt="...">
-        <div class="card-body text-right">
-        <div class="container-fluid">
-          <h6>{{news.source.name}}</h6>
-         <h5 class="card-title">{{news.title}}</h5>
-        </div>
-        <div class="container-fluid">
-          
-          <p class="card-text"><a href="{{news.url}}">read more اقرأ المزيد</a></p>
-          
-        </div>
-        </div>
-     </div>
+  <div *ngFor="let new of news" class="card my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-4 " style=" width: 16rem;">
+      <img src="{{new.urlToImage}}" class="card-img-top" alt="...">
+      <div class="card-body text-right">
+      <div class="container-fluid">
+        <h6>{{new.source.name}}</h6>
+       <h5 class="card-title">{{news.title}}</h5>
+      </div>
+      <div class="container-fluid">
+        
+        <p class="card-text"><a href="{{new.url}}">read more اقرأ المزيد</a></p>
+        
+      </div>
+      </div>
+   </div>
 
- </div> 
+</div> 

@@ -17,14 +17,12 @@ export class SigninComponent implements OnInit {
   //call the api from service 
   signIn() {
     this._AuthService.login(this.signinForm.value).subscribe(data => {
-      console.log(data);
       //check if res = success, logged in 
       if (data.message == 'success') {
         localStorage.setItem('token', data.token);
       }
       else if(data.message=='email not Verified'){
         localStorage.setItem('token', data.token);
-        console.log(data.token)
       }
       else {
         //invalid email or password

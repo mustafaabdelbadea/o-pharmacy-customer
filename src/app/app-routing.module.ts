@@ -22,6 +22,7 @@ const routes: Routes = [
   //{path:'healthNews',component:HealthNewsComponent},
 //check if logged in and email verified 
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
+  {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
 
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },

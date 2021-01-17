@@ -20,7 +20,7 @@ export class VerifyGuard implements CanActivate {
       if (this.decoded.isVerified==true&&this.decoded.verified==true) {
         return true;
       } else {
-        this._Router.navigate(["/ss"]);
+        this._Router.navigate(["/verifyAccount"]);
         return false;
       }
  

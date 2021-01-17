@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
 import { HealthNewsComponent } from './health-news/health-news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NotVerifiedComponent } from './not-verified/not-verified.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SignupComponent,
     ReportProblemComponent,
     HealthNewsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NotVerifiedComponent
   ],
   imports: [
     BrowserModule,

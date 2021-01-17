@@ -21,10 +21,6 @@ export class SigninComponent implements OnInit {
       if (data.message == 'success') {
         localStorage.setItem('token', data.token);
       }
-      //email not verified you should ask him to visit his mail to verify account
-      else if (data.message == 'email not Verified') {
-        console.log('verify email')
-      }
       else {
         //invalid email or password
         console.log(data.message)

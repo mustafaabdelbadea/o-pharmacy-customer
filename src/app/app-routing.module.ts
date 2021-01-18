@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AuthLoginGuard } from './Guards/auth-login.guard';
 import { AuthGuard } from './Guards/auth.guard';
 import { VerifyGuard } from './Guards/verify.guard';
@@ -23,6 +24,7 @@ const routes: Routes = [
 //check if logged in and email verified 
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
+  {path:'editProfile',component:EditProfileComponent},
 
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },

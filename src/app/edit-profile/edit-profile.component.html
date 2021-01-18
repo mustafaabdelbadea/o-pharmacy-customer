@@ -1,0 +1,18 @@
+<div class="w-100" >
+    <div class="w-25 m-1 border" >
+
+    <h6 class="ml-5 pt-5">edit name </h6>
+    <form [formGroup]='editNameForm' class="w-75 container m-auto pb-5" (ngSubmit)='editName()'>
+    <div class="form-group">
+      <label class='label-color  text-lg-left'for="">Name</label>
+      <input formControlName='name' type="text" class="form-control w-75">
+    <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched " class="alert alert-danger mt-2">  name not vaild</div>
+    </div>
+            
+    <button [disabled]='editNameForm.invalid' class="btn btn-primary ml-5 " type="submit">Edit</button>
+      
+</form>
+</div>
+
+
+</div>

@@ -35,4 +35,10 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editCustomerPhone",{phones},this.httpOptions);
   }
 
+  editAddress(address :any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editCustomerAddress",{address},this.httpOptions);
+  }
+
+
 }

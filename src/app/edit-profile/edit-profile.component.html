@@ -53,4 +53,30 @@
 </form>
 </div>
 
+<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
+
+  <h6 class="py-3 text-center">edit address </h6>
+  <form [formGroup]='editAddressForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editAddress()'>
+  <div class="form-group">
+    <label class='label-color  text-lg-left'for="">flat</label>
+    <input formControlName='flat' type="text" class="form-control w-75 m-auto">
+    <div *ngIf="editAddressForm.controls.flat.invalid&&editAddressForm.controls.flat.touched " class="alert alert-danger mt-2">  building not vaild</div>
+    <label class='label-color  text-lg-left'for="">floor</label>
+    <input formControlName='floor' type="text" class="form-control w-75 m-auto">
+    <div *ngIf="editAddressForm.controls.floor.invalid&&editAddressForm.controls.floor.touched " class="alert alert-danger mt-2">  building not vaild</div>
+    <label class='label-color  text-lg-left'for="">building</label>
+    <input formControlName='building' type="text" class="form-control w-75 m-auto">
+    <div *ngIf="editAddressForm.controls.building.invalid&&editAddressForm.controls.building.touched " class="alert alert-danger mt-2">  building not vaild</div>  
+    <label class='label-color  text-lg-left'for="">locationAsAddress</label>
+    <input formControlName='locationAsAddress' type="text" class="form-control w-75 m-auto">
+    <div *ngIf="editAddressForm.controls.locationAsAddress.invalid&&editAddressForm.controls.locationAsAddress.touched " class="alert alert-danger mt-2">locationAsAddress not vaild</div>
+   
+  </div>
+          
+  <button [disabled]='editAddressForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Address</button>
+    
+</form>
+</div>
+
+
 </div>

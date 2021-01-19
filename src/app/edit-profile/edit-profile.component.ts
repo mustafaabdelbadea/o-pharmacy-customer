@@ -33,8 +33,6 @@ export class EditProfileComponent implements OnInit {
     'oldPassword': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
     'password': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
     'confirmPassword': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)])
-  //   'locationAsAddress': new FormControl(null, [Validators.required]),
-  //   'building': new FormControl(null, [Validators.required]),
     });
   passwordNotMatch(){  
    if (this.editPassForm.value.password==this.editPassForm.value.confirmPassword) {
@@ -82,6 +80,27 @@ export class EditProfileComponent implements OnInit {
   
   }
   
+
+  editAddressForm = new FormGroup({
+    'locationAsAddress': new FormControl(null, [Validators.required]),
+    'building': new FormControl(null, [Validators.required]),
+    'flat': new FormControl(null, [Validators.required]),
+    'floor': new FormControl(null, [Validators.required])
+ });
+ 
+    editAddress()
+  {
+    let address = this.editAddressForm.value.locationAsAddress + ' building:' + this.editAddressForm.value.building + ' floor:' + this.editAddressForm.value.floor + ' flat:' + this.editAddressForm.value.flat;
+    
+    this._EditProfileService.editAddress(address).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
   
   constructor(private _EditProfileService :EditProfileService) { }
 

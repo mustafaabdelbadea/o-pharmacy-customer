@@ -37,5 +37,20 @@
 </form>
 </div>
 
+<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary" >
+
+  <h6 class="py-3 text-center">edit phones </h6>
+  <form [formGroup]='editPhonesForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPhones()'>
+  <div class="form-group ">
+    <label class='label-color  'for="">phones</label>
+    <input formControlName='phones' type="text" class="form-control w-75 m-auto">
+    <div  class="alert alert-primary w-100 mt-2"> this delete your phone and insert new one</div>
+    <div *ngIf="editPhonesForm.controls.phones.invalid&&editPhonesForm.controls.phones.touched " class="alert alert-danger mt-2">  number not vaild</div>
+  </div>
+          
+  <button [disabled]='editPhonesForm.invalid' class="btn btn-primary ml-5 m-auto " type="submit">edit phones</button>
+    
+</form>
+</div>
 
 </div>

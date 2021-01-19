@@ -30,5 +30,9 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editCustomerPass",{oldpassword, password ,confirmPassword},this.httpOptions);
   }
 
+  editPhones(phones :any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editCustomerPhone",{phones},this.httpOptions);
+  }
 
 }

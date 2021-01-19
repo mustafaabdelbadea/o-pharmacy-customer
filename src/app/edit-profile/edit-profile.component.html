@@ -1,16 +1,39 @@
-<div class="w-100" >
-    <div class="w-25 m-1 border" >
+<div class="d-flex justify-content-around row py-4 w-100" >
 
-    <h6 class="ml-5 pt-5">edit name </h6>
-    <form [formGroup]='editNameForm' class="w-75 container m-auto pb-5" (ngSubmit)='editName()'>
+  <div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
+
+    <h6 class="py-3 text-center">edit name </h6>
+    <form [formGroup]='editNameForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editName()'>
     <div class="form-group">
       <label class='label-color  text-lg-left'for="">Name</label>
-      <input formControlName='name' type="text" class="form-control w-75">
+      <input formControlName='name' type="text" class="form-control w-75 m-auto">
     <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched " class="alert alert-danger mt-2">  name not vaild</div>
     </div>
             
-    <button [disabled]='editNameForm.invalid' class="btn btn-primary ml-5 " type="submit">Edit</button>
+    <button [disabled]='editNameForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Name</button>
       
+</form>
+</div>
+
+<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
+
+  <h6 class="py-3 text-center">edit password </h6>
+  <form [formGroup]='editPassForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPass()'>
+  <div class="form-group">
+    <label class='label-color  text-lg-left'for="">old password</label>
+    <input formControlName='oldPassword' type="password" class="form-control w-75 m-auto">
+    <div *ngIf="editPassForm.controls.oldPassword.invalid&&editPassForm.controls.oldPassword.touched " class="alert alert-danger mt-2">  old password not vaild</div>  
+    <label class='label-color  text-lg-left'for="">new password</label>
+    <input formControlName='password' type="password" class="form-control w-75 m-auto">
+    <div *ngIf="editPassForm.controls.password.invalid&&editPassForm.controls.password.touched " class="alert alert-danger mt-2">  new password not vaild</div>
+    <label class='label-color  text-lg-left'for="">confirm new password</label>
+    <input formControlName='confirmPassword' type="password" class="form-control w-75 m-auto">
+    <div *ngIf="editPassForm.controls.confirmPassword.invalid&&editPassForm.controls.confirmPassword.touched " class="alert alert-danger mt-2">  confirm password not vaild</div>
+    <div *ngIf="passwordNotMatch()&&editPassForm.controls.confirmPassword.touched " class="alert alert-danger mt-2">  confirm password not match</div> 
+  </div>
+          
+  <button [disabled]='editPassForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Password</button>
+    
 </form>
 </div>
 

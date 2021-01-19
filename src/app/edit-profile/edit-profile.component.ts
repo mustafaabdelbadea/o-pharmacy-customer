@@ -33,6 +33,43 @@ export class EditProfileComponent implements OnInit {
 
   
   }
+
+
+  editPassForm = new FormGroup({
+    'oldPassword': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
+    'password': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
+    'confirmPassword': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)])
+  //   'phones': new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(12)]),
+  //   'email': new FormControl(null, [Validators.required, Validators.email]),
+  //   'locationAsAddress': new FormControl(null, [Validators.required]),
+  //   'building': new FormControl(null, [Validators.required]),
+    });
+  passwordNotMatch(){  
+   if (this.editPassForm.value.password==this.editPassForm.value.confirmPassword) {
+     return false;
+   } else {
+     return true;
+   }     
+   }
+  
+  editPass()
+  {
+        let oldpassword = this.editPassForm.value.oldPassword;
+        let password = this.editPassForm.value.password;
+        let confirmpassword = this.editPassForm.value.confirmPassword;
+                
+    this._EditProfileService.editPassword(oldpassword,password,confirmpassword).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
+
+
+
   
   
   constructor(private _EditProfileService :EditProfileService) { }

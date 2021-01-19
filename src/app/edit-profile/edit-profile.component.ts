@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import {EditProfileService} from '../services/edit-profile.service'
+import * as mapboxgl from 'mapbox-gl';
+
 
 @Component({
   selector: 'app-edit-profile',
@@ -101,11 +103,62 @@ export class EditProfileComponent implements OnInit {
 
   
   }
+
+  lng: any;
+  latt: any;
+  //mapbox
+  map() {
+    const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';
+    var map = new mapboxgl.Map({
+      accessToken,
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [30.013056, 31.208853], // starting position
+      zoom: 9,// starting zoom
+      trackResize: true
+    });
+    //to get coord when click on button
+    var geolocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: false
+      },
+      trackUserLocation: true
+ 
+    });
+    map.addControl(geolocate);
+    geolocate.on('geolocate', (e: any) => {
+      this.lng = e.coords.longitude;
+      this.latt = e.coords.latitude
+      var position = [this.lng, this.latt];
+      console.log(this.lng ,this.latt)
+      return position;
+ 
+    });
+  }
+ 
+  checkNolocation(): any {
+   if (this.latt == undefined|| this.latt == null|| this.lng == undefined || this.lng == null)
+     return true
+ }
+ 
+  editCoordinates()
+  { 
+    let lat= this.latt;
+   let lon = this.lng;
+     
+    this._EditProfileService.editCoordinates(lat,lon).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+ }
   
   constructor(private _EditProfileService :EditProfileService) { }
 
 
   ngOnInit(): void {
+    this.map()
   }
 
 }

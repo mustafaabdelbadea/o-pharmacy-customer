@@ -40,5 +40,9 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editCustomerAddress",{address},this.httpOptions);
   }
 
+  editCoordinates(lat :any,lon:any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editCustomerCoordinates",{ lat , lon},this.httpOptions);
+  }
 
 }

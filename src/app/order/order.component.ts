@@ -29,10 +29,12 @@ export class OrderComponent implements OnInit {
     });
     //call the api from service 
     order() {
+      //save order text and photo in data 
   let data={
     orderByTexting:this.orderForm.value.orderByTexting,
     orderByPhoto:this.url
   }
+  //check if there photo or text
   if(data.orderByTexting==null &&data.orderByPhoto==null){
     window.alert('add order');
   }

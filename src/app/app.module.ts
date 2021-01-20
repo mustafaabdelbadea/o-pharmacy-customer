@@ -14,6 +14,7 @@ import { HealthNewsComponent } from './health-news/health-news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NotVerifiedComponent } from './not-verified/not-verified.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     HealthNewsComponent,
     NotFoundComponent,
     NotVerifiedComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

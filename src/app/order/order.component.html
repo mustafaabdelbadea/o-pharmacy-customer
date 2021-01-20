@@ -1,0 +1,16 @@
+
+<div class="w-50 m-auto mt-5  loginsc align-self-center">
+    <h1 class="text-center pt-3 ">Order </h1>
+  <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+        <div class="form-group">
+          <label class='label-color'for="">order</label>
+          <input formControlName='orderByTexting' type="text" class="form-control">
+          <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "  class="alert alert-danger mt-2"> order not vaild</div>
+        </div>
+        <img [src]="url" height="200"> <br/>
+        <input type='file' (change)="onSelectFile($event)">
+        <button [disabled]='orderForm.invalid' class="btn btn-primary float-right " type="submit">make an order</button>
+        
+  </form>
+  </div>
+  

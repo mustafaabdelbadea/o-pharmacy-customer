@@ -6,6 +6,7 @@ import { AuthGuard } from './Guards/auth.guard';
 import { VerifyGuard } from './Guards/verify.guard';
 import { HealthNewsComponent } from './health-news/health-news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OrderComponent } from './order/order.component';
 import { ReportProblemComponent } from './report-problem/report-problem.component';
 import { RequestResetComponent } from './request-reset/request-reset.component';
 import { ResponseResetComponent } from './response-reset/response-reset.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
   {path:'editProfile',component:EditProfileComponent},
-
+  {path:'makeOrder',canActivate:[AuthGuard,VerifyGuard],component:OrderComponent},
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },
   { path: 'customerVerifyEmail/:token', component: VerifyEmailComponent },

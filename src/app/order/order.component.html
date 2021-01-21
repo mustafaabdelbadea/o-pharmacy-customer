@@ -8,7 +8,7 @@
           <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "  class="alert alert-danger mt-2"> order not vaild</div>
         </div>
         <img [src]="url" height="200"> <br/>
-        <input type='file' (change)="onSelectFile($event)">
+        <input type='file' (change)="onSelectFile($event)" accept=".jpg, .jpeg, .png" multiple>
         <button  class="btn btn-primary float-right " type="submit">make an order</button>
         
   </form>

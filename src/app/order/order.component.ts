@@ -27,25 +27,37 @@ export class OrderComponent implements OnInit {
 
     return false;
   }
-  url: any;
+  url: any=[];
   onSelectFile(event: any) { // called each time file input changes
     if (event.target.files && event.target.files[0]) {
       console.log(event.target.files[0].type)
-      if (this.validFileType(event.target.files[0])) {
-        var reader = new FileReader();
+      var filesAmount = event.target.files.length;
+      for (let i = 0; i < filesAmount; i++) {
 
-        reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-        reader.onload = (event: any) => { // called once readAsDataURL is completed
-          this.url = event.target.result;
-          console.log(this.url)
+        if (this.validFileType(event.target.files[i])) {
+          var reader = new FileReader();
+  
+          reader.readAsDataURL(event.target.files[i]); // read file as data url
+  
+          reader.onload = (event: any) => { // called once readAsDataURL is completed
+            this.url.push(event.target.result);
+            console.log(this.url)
+          }
         }
-      }
-      else {
-        console.log('upload image !!');
-        //if not image make url = not found 
-        this.url = this.baseUrl;
-      }
+        else {
+          console.log('upload image !!');
+          //if not image make url = not found 
+          this.url = this.baseUrl;
+        }
+
+
+        var reader = new FileReader();
+}
+
+
+
+
+     
     }
   }
   //form group check data and validation

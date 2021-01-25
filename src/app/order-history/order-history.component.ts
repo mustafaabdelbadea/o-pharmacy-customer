@@ -16,7 +16,8 @@ export class OrderHistoryComponent implements OnInit {
 
       (data)=>{
         
-        this.allOrdersData=data;    
+        this.allOrdersData=data;   
+        console.log(data) 
 },
 (error)=>{
         console.log(error) ;

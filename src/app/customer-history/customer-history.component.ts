@@ -47,24 +47,25 @@ export class CustomerHistoryComponent implements OnInit {
 
   enterhistory()
   {
-   let doYouHaveDiabates= this.medicalHistoryForm.value.doYouHaveDiabates;
-   let highBloodPreasure=this.medicalHistoryForm.value.highBloodPreasure;
-   let highCholesterol=this.medicalHistoryForm.value.highCholestrol;
-   let doYouSmoke=this.medicalHistoryForm.value.doYousmoke;
-   let doYouVape=this.medicalHistoryForm.value.doYouVape;
-   let doYouDrinkAlcohol=this.medicalHistoryForm.value.doYouDrinkAlcohol;
-   let doYouUseDrugs=this.medicalHistoryForm.value.doYouUseDrugs;
-   let doYouExercize=this.medicalHistoryForm.value.doYouExersize;
-   let whatIsYourMaritalStatus=this.medicalHistoryForm.value.whatsYourMAritalStatus;
-   let bloodType=this.medicalHistoryForm.value.bloodType;
-   let doYouHaveOtherHealthCondition=this.medicalHistoryForm.value.doYouHaveOtherHealthConditions;
-   let atientConcerns=this.medicalHistoryForm.value.patientConcerns;
+    let data={
+       doYouHaveDiabates: this.medicalHistoryForm.value.doYouHaveDiabates,
+       highBloodPreasure:this.medicalHistoryForm.value.highBloodPreasure,
+       highCholesterol:this.medicalHistoryForm.value.highCholestrol,
+       doYouSmoke:this.medicalHistoryForm.value.doYousmoke,
+       doYouVape:this.medicalHistoryForm.value.doYouVape,
+       doYouDrinkAlcohol:this.medicalHistoryForm.value.doYouDrinkAlcohol,
+       doYouUseDrugs:this.medicalHistoryForm.value.doYouUseDrugs,
+       doYouExercize:this.medicalHistoryForm.value.doYouExersize,
+       whatIsYourMaritalStatus:this.medicalHistoryForm.value.whatsYourMAritalStatus,
+       bloodType:this.medicalHistoryForm.value.bloodType,
+       doYouHaveOtherHealthConditions:this.medicalHistoryForm.value.doYouHaveOtherHealthConditions,
+       patientConcerns:this.medicalHistoryForm.value.patientConcerns,
+    }
 
 
-    this._CustomerHistoryService.enterhistory(doYouHaveDiabates, highBloodPreasure, highCholesterol,
-      doYouSmoke, doYouVape, doYouDrinkAlcohol,
-      doYouUseDrugs, doYouExercize, whatIsYourMaritalStatus,
-      bloodType, doYouHaveOtherHealthCondition, atientConcerns).subscribe(d => {
+
+    this._CustomerHistoryService.enterhistory(data).subscribe(d => {
+      console.log(data)
       console.log(d)
     },
       err => {

@@ -24,21 +24,15 @@ export class CustomerHistoryService {
 
   
 
-  enterhistory(doYouHaveDiabates:any, highBloodPreasure:any, highCholesterol:any,
-    doYouSmoke:any, doYouVape:any, doYouDrinkAlcohol:any,
-    doYouUseDrugs:any, doYouExercize:any, whatIsYourMaritalStatus:any,
-    bloodType:any, doYouHaveOtherHealthCondition:any, atientConcerns:any):Observable<any>
+  enterhistory(data:any):Observable<any>
   {
-    return this._HttpClient.post(this.baseUrl + "medicalhistory",{doYouHaveDiabates, highBloodPreasure, highCholesterol,
-                                                                     doYouSmoke, doYouVape, doYouDrinkAlcohol,
-                                                                      doYouUseDrugs, doYouExercize, whatIsYourMaritalStatus,
-                                                                      bloodType, doYouHaveOtherHealthCondition, atientConcerns},this.httpOptions);
+    return this._HttpClient.post(this.baseUrl + "medicalhistory",data,this.httpOptions);
   }
 
 
   gethistory():Observable<any>
   {
-    return this._HttpClient.post(this.baseUrl + "medicalhistoryRetrieve",this.httpOptions);
+    return this._HttpClient.get(this.baseUrl + "medicalhistoryRetrieve",this.httpOptions);
   }
 
 

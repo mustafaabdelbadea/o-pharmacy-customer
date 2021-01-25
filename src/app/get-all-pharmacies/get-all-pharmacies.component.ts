@@ -17,6 +17,7 @@ export class GetAllPharmaciesComponent implements OnInit {
     _GetAllPharmaciesService.allPharmacies().subscribe( (data)=>{
         
       this.allPharmaciesData = data; 
+      console.log(data)
   
     
     },

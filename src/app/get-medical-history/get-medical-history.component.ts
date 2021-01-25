@@ -15,6 +15,7 @@ export class GetMedicalHistoryComponent implements OnInit {
     _CustomerHistoryService.gethistory().subscribe( (data)=>{
         
       this.history = data; 
+      console.log(this.history)
     
     
     },

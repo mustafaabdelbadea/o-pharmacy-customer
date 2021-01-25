@@ -15,7 +15,7 @@ export class CustomerCurrentOrdersComponent implements OnInit {
 _CustomerCurrentOrdersService.currentOrder().subscribe( (data)=>{
         
   this.currentOrderData = data; 
-
+  console.log(data)
 
 },
 err => {

@@ -21,6 +21,7 @@ import { CustomerCurrentOrdersComponent } from './customer-current-orders/custom
 import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
+import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
     CustomerHistoryComponent,
     GetMedicalHistoryComponent,
     GetOneOrderComponent,
+    GetOnePharmacyComponent,
     
   ],
   imports: [

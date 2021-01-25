@@ -19,6 +19,8 @@ import { CustomerCurrentOrdersComponent } from './customer-current-orders/custom
 import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
+import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
   { path: 'signin', component: SigninComponent },
@@ -39,6 +41,7 @@ const routes: Routes = [
   {path:'customerHistory',component:CustomerHistoryComponent},
   {path:'getMedicalHistory',component:GetMedicalHistoryComponent},
   {path:'getOneOrder/:currentOrder',component:GetOneOrderComponent},
+  {path:' GetOnePharmacy/:pharmacyID',component:GetOnePharmacyComponent},
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },
   { path: 'customerVerifyEmail/:token', component: VerifyEmailComponent },

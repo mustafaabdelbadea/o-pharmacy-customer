@@ -16,6 +16,7 @@ import { NotVerifiedComponent } from './not-verified/not-verified.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { OrderComponent } from './order/order.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { GetAllPharmaciesComponent } from './get-all-pharmacies/get-all-pharmacies.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     NotVerifiedComponent,
     EditProfileComponent,
     OrderComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    GetAllPharmaciesComponent
   ],
   imports: [
     BrowserModule,

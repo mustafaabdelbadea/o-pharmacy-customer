@@ -17,6 +17,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { OrderComponent } from './order/order.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { GetAllPharmaciesComponent } from './get-all-pharmacies/get-all-pharmacies.component';
+import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { GetAllPharmaciesComponent } from './get-all-pharmacies/get-all-pharmaci
     EditProfileComponent,
     OrderComponent,
     OrderHistoryComponent,
-    GetAllPharmaciesComponent
+    GetAllPharmaciesComponent,
+    CustomerCurrentOrdersComponent,
+    
   ],
   imports: [
     BrowserModule,

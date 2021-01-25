@@ -15,6 +15,7 @@ import { SignupComponent } from './signup/signup.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { GetAllPharmaciesComponent } from './get-all-pharmacies/get-all-pharmacies.component';
+import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
   { path: 'signin', component: SigninComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'makeOrder',canActivate:[AuthGuard,VerifyGuard],component:OrderComponent},
   {path:'orderHistory',component:OrderHistoryComponent},
   {path:'getAllPharmacies',component:GetAllPharmaciesComponent},
+  {path:'customerCurrentOrders',component:CustomerCurrentOrdersComponent},
   //take token from ts file and send it backend
   { path: 'customerForgotPassword/:token', component: ResponseResetComponent },
   { path: 'customerVerifyEmail/:token', component: VerifyEmailComponent },

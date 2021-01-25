@@ -20,6 +20,7 @@ import { GetAllPharmaciesComponent } from './get-all-pharmacies/get-all-pharmaci
 import { CustomerCurrentOrdersComponent } from './customer-current-orders/customer-current-orders.component';
 import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
+import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-hi
     CustomerCurrentOrdersComponent,
     CustomerHistoryComponent,
     GetMedicalHistoryComponent,
+    GetOneOrderComponent,
     
   ],
   imports: [

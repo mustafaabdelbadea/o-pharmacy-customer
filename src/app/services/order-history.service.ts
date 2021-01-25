@@ -22,4 +22,9 @@ allOrders():Observable<any>
   {
     return this._HttpClient.get(this.baseUrl+"customerOrderHistory",this.httpOptions)
 }
+
+oneOrder(orderId:any):Observable<any>
+  {
+    return this._HttpClient.get(this.baseUrl+"currentOrder/"+orderId,this.httpOptions)
+}
 }

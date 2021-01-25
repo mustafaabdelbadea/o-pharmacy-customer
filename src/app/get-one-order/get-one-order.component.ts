@@ -18,6 +18,7 @@ export class GetOneOrderComponent implements OnInit {
       (data)=>{
         
         this.oneOrderData=data;    
+        console.log(data)
 },
 (error)=>{
         console.log(error) ;

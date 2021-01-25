@@ -1,0 +1,45 @@
+
+<div class="container py-5">
+
+    <form [formGroup]="medicalHistoryForm" (ngSubmit)="enterhistory()">
+
+        
+        <input formControlName="doYouHaveDiabates" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">Do you have Diabates</label> <br>
+          
+  <input formControlName="highBloodPreasure" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">High blood preasure</label><br>
+
+  <input formControlName="highCholestrol" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">high Cholestrol</label><br>
+
+  <input formControlName="doYousmoke" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">do You smoke</label><br>
+
+  <input formControlName="doYouVape" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">do You Vape</label><br>
+
+  <input formControlName="doYouDrinkAlcohol" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">do You Drink Alcohol</label><br>
+
+  <input formControlName="doYouUseDrugs" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">do You use Drugs</label><br>
+
+  <input formControlName="doYouExersize" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">doYouExersize</label><br><br>
+
+  <label class="form-check-label" for="inlineCheckbox1"> marital Status</label>
+  <input formControlName="whatsYourMAritalStatus" placeholder="what is your marital Status ?"  class="form-control mb-5">
+  
+  <label class="form-check-label" for="inlineCheckbox1"> blood type</label>
+  <input formControlName="bloodType" placeholder="What is blood type ?"  class="form-control mb-5">
+  
+  <label class="form-check-label" for="inlineCheckbox1"> Health Conditions</label>
+  <input formControlName="doYouHaveOtherHealthConditions" placeholder="do You Have Other Health Conditions ?"  class="form-control mb-5">
+  
+  <label class="form-check-label" for="inlineCheckbox1"> concerns</label>
+  <input formControlName="patientConcerns" placeholder="Do you want to add any concerns ?"  class="form-control mb-5">
+
+  <button  type="submit" class="btn btn-primary">submit</button>
+    </form>
+</div>

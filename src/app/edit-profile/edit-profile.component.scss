@@ -1,0 +1,40 @@
+
+$main-bgcolor :rgba(217,217,219,.7);// ;
+$second-bgcolor:rgba(255, 255, 255,.7);//rgb(217,217,219);
+$text-color : black ;
+$btn-bgcolor:#00bfff;
+
+.mainDiv
+{
+    // background-color:$main-bgcolo ;
+   background-image: url("../../assets/images/tablets-capsules-multi-colored-drug-wallpaper.jpg");
+    //background-repeat: no-repeat;
+
+   background-size: cover;
+   background-position: center;
+    
+}
+
+.mainCard
+{   padding: 3rem;
+    color: $text-color;
+    background-color:$main-bgcolor;
+
+}
+
+.oneEdit
+{   margin-bottom: .5rem;
+    padding: 1.5rem;
+    background-color:$second-bgcolor;
+}
+
+.btn
+{   color: $text-color;
+    background-color: $btn-bgcolor ;
+}
+
+.map
+{
+    width: 15rem; 
+    height: 15rem;
+}

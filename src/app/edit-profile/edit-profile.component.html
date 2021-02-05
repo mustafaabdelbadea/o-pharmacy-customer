@@ -1,96 +1,121 @@
-<div class="d-flex justify-content-around row py-4 w-100" >
+<div class="mainDiv py-1" >
 
-  <div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
 
-    <h6 class="py-3 text-center">edit name </h6>
-    <form [formGroup]='editNameForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editName()'>
+<div class="py-2 px-2 my-1  mx-auto w-75 mainCard" >
+  <!--d-flex justify-content-around row col-sm-10 col-md-5 col-lg-3 -->
+  <div class="text-center mt-1 "> <h3 style="color: #000;" >edit profile </h3> </div>
+
+  <div class="w-100 mx-auto border oneEdit" >
+
+    <h6 class="py-3">edit name </h6>
+
+    <form [formGroup]='editNameForm' class=" w-75 container m-2 mx-auto py-2 text-center" (ngSubmit)='editName()'>
     <div class="form-group">
-      <label class='label-color  text-lg-left'for="">Name</label>
-      <input formControlName='name' type="text" class="form-control w-75 m-auto">
-    <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched " class="alert alert-danger mt-2">  name not vaild</div>
+      <div class=" d-flex mb-3 mx-auto ">
+      <label class='label-color  text-lg-left mx-2 '>Name</label>
+
+      <input formControlName='name' type="text" class="form-control w-75 mx-2">
+    
     </div>
-            
-    <button [disabled]='editNameForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Name</button>
-      
+    <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched " class="w-50 alert alert-danger mt-1 mx-auto">  name not vaild</div>
+    <button [disabled]='editNameForm.invalid' class="btn w-auto m-auto" type="submit">Edit Name</button>
+  </div>
+
 </form>
 </div>
 
-<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
+<div class="w-100 mx-auto border oneEdit" >
 
-  <h6 class="py-3 text-center">edit password </h6>
+  <h6 class="py-3">edit password </h6>
   <form [formGroup]='editPassForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPass()'>
   <div class="form-group">
+    <div class=" d-flex mb-3 mx-auto ">
     <label class='label-color  text-lg-left'for="">old password</label>
     <input formControlName='oldPassword' type="password" class="form-control w-75 m-auto">
+    </div>
     <div *ngIf="editPassForm.controls.oldPassword.invalid&&editPassForm.controls.oldPassword.touched " class="alert alert-danger mt-2">  old password not vaild</div>  
+    <div class=" d-flex mb-3 mx-auto ">
     <label class='label-color  text-lg-left'for="">new password</label>
     <input formControlName='password' type="password" class="form-control w-75 m-auto">
+    </div>
     <div *ngIf="editPassForm.controls.password.invalid&&editPassForm.controls.password.touched " class="alert alert-danger mt-2">  new password not vaild</div>
-    <label class='label-color  text-lg-left'for="">confirm new password</label>
+    <div class=" d-flex mb-3 mx-auto ">
+    <label class='label-color  text-lg-left '>confirm password</label>
     <input formControlName='confirmPassword' type="password" class="form-control w-75 m-auto">
-    <div *ngIf="editPassForm.controls.confirmPassword.invalid&&editPassForm.controls.confirmPassword.touched " class="alert alert-danger mt-2">  confirm password not vaild</div>
+    </div>
     <div *ngIf="passwordNotMatch()&&editPassForm.controls.confirmPassword.touched " class="alert alert-danger mt-2">  confirm password not match</div> 
   </div>
           
-  <button [disabled]='editPassForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Password</button>
+  <button [disabled]='editPassForm.invalid' class="btn w-auto m-auto" type="submit">Edit Password</button>
     
 </form>
 </div>
 
-<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary" >
+<div class="w-100 mx-auto border oneEdit" >
 
-  <h6 class="py-3 text-center">edit phones </h6>
+  <h6 class="py-3">edit phones </h6>
   <form [formGroup]='editPhonesForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPhones()'>
   <div class="form-group ">
-    <label class='label-color  'for="">phones</label>
+    <div class=" d-flex mb-3 mx-auto ">
+    <label class='label-color'>phone</label>
     <input formControlName='phones' type="text" class="form-control w-75 m-auto">
+  </div>
     <div  class="alert alert-primary w-100 mt-2"> this delete your phone and insert new one</div>
     <div *ngIf="editPhonesForm.controls.phones.invalid&&editPhonesForm.controls.phones.touched " class="alert alert-danger mt-2">  number not vaild</div>
   </div>
           
-  <button [disabled]='editPhonesForm.invalid' class="btn btn-primary ml-5 m-auto " type="submit">edit phones</button>
+  <button [disabled]='editPhonesForm.invalid' class="btn w-auto m-auto" type="submit">edit phones</button>
     
 </form>
 </div>
 
-<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary " >
+<div class="w-100 mx-auto border oneEdit" >
 
-  <h6 class="py-3 text-center">edit address </h6>
+  <h6 class="py-3 ">edit address </h6>
   <form [formGroup]='editAddressForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editAddress()'>
   <div class="form-group">
-    <label class='label-color  text-lg-left'for="">flat</label>
-    <input formControlName='flat' type="text" class="form-control w-75 m-auto">
-    <div *ngIf="editAddressForm.controls.flat.invalid&&editAddressForm.controls.flat.touched " class="alert alert-danger mt-2">  building not vaild</div>
-    <label class='label-color  text-lg-left'for="">floor</label>
-    <input formControlName='floor' type="text" class="form-control w-75 m-auto">
-    <div *ngIf="editAddressForm.controls.floor.invalid&&editAddressForm.controls.floor.touched " class="alert alert-danger mt-2">  building not vaild</div>
-    <label class='label-color  text-lg-left'for="">building</label>
-    <input formControlName='building' type="text" class="form-control w-75 m-auto">
-    <div *ngIf="editAddressForm.controls.building.invalid&&editAddressForm.controls.building.touched " class="alert alert-danger mt-2">  building not vaild</div>  
-    <label class='label-color  text-lg-left'for="">locationAsAddress</label>
-    <input formControlName='locationAsAddress' type="text" class="form-control w-75 m-auto">
-    <div *ngIf="editAddressForm.controls.locationAsAddress.invalid&&editAddressForm.controls.locationAsAddress.touched " class="alert alert-danger mt-2">locationAsAddress not vaild</div>
+    <div class=" d-flex mb-3 mx-auto ">
+    <label class='label-color mx-2 text-lg-left'for="">flat</label>
+    <input formControlName='flat' type="text" class="form-control w-25 m-auto">
    
+    <label class='label-color mx-2 text-lg-left'for="">floor</label>
+    <input formControlName='floor' type="text" class="form-control w-25 m-auto">
+
+    <label class='label-color mx-2 text-lg-left'for="">building</label>
+    <input formControlName='building' type="text" class="form-control w-25 m-auto">
+  </div>
+
+  <div *ngIf="editAddressForm.controls.flat.invalid&&editAddressForm.controls.flat.touched " class="alert alert-danger mt-2">  flat not vaild</div>
+    <div *ngIf="editAddressForm.controls.floor.invalid&&editAddressForm.controls.floor.touched " class="alert alert-danger mt-2">  floor not vaild</div>
+    <div *ngIf="editAddressForm.controls.building.invalid&&editAddressForm.controls.building.touched " class="alert alert-danger mt-2">  building not vaild</div>  
+
+    <div class=" d-flex my-3 mx-auto ">
+    <label class='label-color mx-2 text-lg-left'for="">Address</label>
+    <input formControlName='locationAsAddress' type="text" class="form-control w-75 m-auto">
+  </div>
+  <div *ngIf="editAddressForm.controls.locationAsAddress.invalid&&editAddressForm.controls.locationAsAddress.touched " class="alert alert-danger mt-2">locationAsAddress not vaild</div>
+ 
   </div>
           
-  <button [disabled]='editAddressForm.invalid' class="btn btn-primary m-auto" type="submit">Edit Address</button>
+  <button [disabled]='editAddressForm.invalid' class="btn w-auto m-auto" type="submit">Edit Address</button>
     
 </form>
 </div>
 
-<div class="w-25 my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-3 border bg-secondary" >
+<div class="w-100 mx-auto border oneEdit" >
 
-  <h6 class="py-3 text-center">edit your location </h6>
+  <h6 class="py-3">edit your location </h6>
   <form class="w-100 container m-auto pb-5 text-center" (ngSubmit)='editCoordinates()'>
   
     <div class="form-group w-100 m-auto ">
-      <div id="map" class=" form-control m-auto" style="width: 15rem; height: 15rem;"></div>
+      <div id="map" class=" form-control m-auto map"></div>
   </div>
   <div  class="alert alert-primary w-100 mt-2">press on location selector on the map then press edit </div>
-  <button [disabled]='checkNolocation()' class="btn btn-primary ml-5 m-auto " type="submit">Edit location</button>
+  <button [disabled]='checkNolocation()' class="btn w-auto m-auto " type="submit">Edit location</button>
     
 </form>
 </div>
 
 
+</div>
 </div>

@@ -1,1 +1,28 @@
-/* No CSS *//*# sourceMappingURL=edit-profile.component.css.map */
+.mainDiv {
+  background-image: url("../../assets/images/tablets-capsules-multi-colored-drug-wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.mainCard {
+  padding: 3rem;
+  color: black;
+  background-color: rgba(217, 217, 219, 0.7);
+}
+
+.oneEdit {
+  margin-bottom: .5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+  color: black;
+  background-color: #00bfff;
+}
+
+.map {
+  width: 15rem;
+  height: 15rem;
+}
+/*# sourceMappingURL=edit-profile.component.css.map */

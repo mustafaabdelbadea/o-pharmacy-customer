@@ -1,6 +1,9 @@
 #map {
-  position: absolute;
-  top: 0;
+  height: 60vh;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 200%;
   bottom: 0;
   width: 100%;
 }
@@ -13,11 +16,13 @@
   padding: 0;
 }
 
-.test1 {
-  background-color: aqua;
+.pharmaciesList {
+  height: 70vh;
+  overflow: auto;
 }
 
-.test2 {
-  background-color: aquamarine;
+.logoContainer {
+  width: 40px;
+  height: 40px;
 }
 /*# sourceMappingURL=get-all-pharmacies.component.css.map */

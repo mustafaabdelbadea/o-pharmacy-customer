@@ -1,11 +1,3 @@
-<!-- <div class="d-flex justify-content-around row py-4 w-100" >
-
-    
-    
-  </div>
-    
-  </div> -->
-
 <div class="container mt-5 ">
   <div class="w-100  m-auto border border-secondary shadow-lg  bg-white rounded ">
     <h1 class="m-3"><i class="fas fa-capsules"></i> Find our Pharmacies</h1>
@@ -15,15 +7,18 @@
         <h4 class="m-2"> <i class="fas fa-search-location    "></i> Search</h4>
         <form>
           <div class="form-group">
-            <input [(ngModel)]="searchText" class="form-control"  name="searchInput" placeholder="Enter Name Or Address">
+            <input [(ngModel)]="searchText" class="form-control" name="searchInput" placeholder="Enter Name Or Address">
           </div>
         </form>
         <div *ngFor="let pharmacy of allPharmaciesData | searchPharmacy:searchText">
           <div *ngIf="pharmacy.logo==null">
             <div class="w-25 d-inline ">
-              <img src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" class=" logoContainer rounded-circle d-line" alt="">
+              <img src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png"
+                class=" logoContainer rounded-circle d-line" alt="">
             </div>
-            <h4 class="d-inline">{{pharmacy.name}}</h4>
+            <a [routerLink]="['/GetOnePharmacy',pharmacy._id]">
+              <h4 class="d-inline">{{pharmacy.name}}</h4>
+            </a>
             <p>{{pharmacy.locationAsAddress}}</p>
             <hr>
           </div>
@@ -36,11 +31,8 @@
         </div>
       </div>
       <div class="col-md-8 h-100 ">
-        
         <div id="map" class="w-100 mt-3"></div>
       </div>
     </div>
-
   </div>
-
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-not-verified',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotVerifiedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
   }
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
 
+
+ }
 }

@@ -22,6 +22,8 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+import { HomeComponent } from './home/home.component';
+import { SearchPharmacyPipe } from './search-pharmacy.pipe';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
     GetMedicalHistoryComponent,
     GetOneOrderComponent,
     GetOnePharmacyComponent,
+    HomeComponent,
+    SearchPharmacyPipe,
     
   ],
   imports: [

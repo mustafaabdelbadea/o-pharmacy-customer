@@ -12,4 +12,12 @@
   cursor: pointer;
   padding: 0;
 }
+
+.test1 {
+  background-color: aqua;
+}
+
+.test2 {
+  background-color: aquamarine;
+}
 /*# sourceMappingURL=get-all-pharmacies.component.css.map */

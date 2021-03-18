@@ -20,6 +20,8 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+import { HomeComponent } from './home/home.component';
+import { NotVerifiedComponent } from './not-verified/not-verified.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"signin",pathMatch:"full"},
@@ -31,8 +33,10 @@ const routes: Routes = [
   {path:'reportProblem',component:ReportProblemComponent},
   //{path:'healthNews',component:HealthNewsComponent},
 //check if logged in and email verified 
+{path:'home',canActivate:[AuthGuard,VerifyGuard],component:HomeComponent},
+
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
-  {path:'verifyAccount',canActivate:[AuthGuard],component:VerifyEmailComponent},
+  {path:'verifyAccount',canActivate:[AuthGuard],component:NotVerifiedComponent},
   {path:'editProfile',component:EditProfileComponent},
   {path:'makeOrder',canActivate:[AuthGuard,VerifyGuard],component:OrderComponent},
   {path:'orderHistory',component:OrderHistoryComponent},

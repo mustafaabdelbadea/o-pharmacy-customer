@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import  * as mapboxgl from 'mapbox-gl';
 import {GetAllPharmaciesService} from  '../services/get-all-pharmacies.service';
 
@@ -8,15 +8,16 @@ import {GetAllPharmaciesService} from  '../services/get-all-pharmacies.service';
   styleUrls: ['./get-all-pharmacies.component.scss']
 })
 export class GetAllPharmaciesComponent implements OnInit {
+  searchText:any=null;
 
   allPharmaciesData :any;
 
-  constructor(_GetAllPharmaciesService:GetAllPharmaciesService) {
+  constructor(_GetAllPharmaciesService:GetAllPharmaciesService,private elementRef: ElementRef) {
 
     _GetAllPharmaciesService.allPharmacies().subscribe( (data)=>{
         
       this.allPharmaciesData = data; 
-      console.log(data,this.allPharmaciesData)
+      console.log('data',this.allPharmaciesData)
       this.map()
   
     
@@ -29,6 +30,7 @@ export class GetAllPharmaciesComponent implements OnInit {
 
 
    }
+   
    lng: any;
    latt: any;
    map(){
@@ -45,7 +47,7 @@ export class GetAllPharmaciesComponent implements OnInit {
   'type': '',
   'properties': {
   'message': '',
-  'iconSize': [60, 60]
+  'iconSize': [0, 0]
   },
   'geometry': {
   'type': 'Point',
@@ -61,7 +63,7 @@ export class GetAllPharmaciesComponent implements OnInit {
       'type': 'Feature',
       'properties': {
       'message': 'Foo',
-      'iconSize': [60, 60]
+      'iconSize': [40, 40],
       },
       'geometry': {
       'type': 'Point',
@@ -76,20 +78,27 @@ export class GetAllPharmaciesComponent implements OnInit {
     accessToken,
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: [30.013056, 31.208853],
-  zoom: 5
+  center: [ 31.23245222369428,30.0492005278656],
+  zoom: 7
   });
    
   geojson.features.forEach(function (marker) {
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
+    
     el.style.backgroundImage =
-        'url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png )';
+        'url(../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png)';
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
+    el.style.backgroundRepeat='no-repeat';
+
+    el.style.backgroundSize = 'cover';
+    el.style.borderRadius='50%';
+
 
     el.addEventListener('click', function () {
+      
         window.alert(marker.properties.message);
         console.log(marker.geometry.coordinates[0],marker.geometry.coordinates[1])
     });
@@ -100,6 +109,7 @@ export class GetAllPharmaciesComponent implements OnInit {
         .setLngLat([marker.geometry.coordinates[0],marker.geometry.coordinates[1]])
         .addTo(map);
 });
+
 
     //to get coord when click on button
     var geolocate = new mapboxgl.GeolocateControl({
@@ -124,5 +134,11 @@ export class GetAllPharmaciesComponent implements OnInit {
   ngOnInit(): void {
    
   }
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+
+
+ }
 
 }

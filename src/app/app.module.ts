@@ -22,6 +22,7 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
 import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-history.component';
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
     GetMedicalHistoryComponent,
     GetOneOrderComponent,
     GetOnePharmacyComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -55,6 +57,6 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

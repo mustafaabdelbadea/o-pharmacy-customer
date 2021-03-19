@@ -1,4 +1,14 @@
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+#map { 
+    height:60vh ;
+     position: relative;
+      left: 0;
+       right: 0;
+        top: 200%;
+         bottom: 0;
+          width: 100%;
+          
+          }
 .marker {
     display: block;
     border: none;
@@ -6,3 +16,11 @@
     cursor: pointer;
     padding: 0;
     }
+.pharmaciesList{
+    height: 70vh;
+    overflow: auto;
+}
+.logoContainer{
+    width: 40px;
+    height: 40px;
+}

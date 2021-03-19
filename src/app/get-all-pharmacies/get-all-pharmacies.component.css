@@ -1,6 +1,9 @@
 #map {
-  position: absolute;
-  top: 0;
+  height: 60vh;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 200%;
   bottom: 0;
   width: 100%;
 }
@@ -11,5 +14,15 @@
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
+}
+
+.pharmaciesList {
+  height: 70vh;
+  overflow: auto;
+}
+
+.logoContainer {
+  width: 40px;
+  height: 40px;
 }
 /*# sourceMappingURL=get-all-pharmacies.component.css.map */

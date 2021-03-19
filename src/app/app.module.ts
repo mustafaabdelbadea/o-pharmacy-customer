@@ -23,6 +23,8 @@ import { GetMedicalHistoryComponent } from './get-medical-history/get-medical-hi
 import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { SearchPharmacyPipe } from './search-pharmacy.pipe';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { FooterComponent } from './footer/footer.component';
     GetOneOrderComponent,
     GetOnePharmacyComponent,
     FooterComponent,
+    HomeComponent,
+    SearchPharmacyPipe,
     
   ],
   imports: [

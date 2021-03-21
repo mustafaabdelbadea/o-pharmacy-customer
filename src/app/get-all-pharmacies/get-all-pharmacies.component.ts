@@ -52,7 +52,7 @@ export class GetAllPharmaciesComponent implements OnInit {
       geojson.features.push({
         'type': 'Feature',
         'properties': {
-          'message': 'Foo',
+          'message': this.allPharmaciesData[i].name,
           'iconSize': [40, 40],
           'id': this.allPharmaciesData[i]._id
         },
@@ -78,9 +78,11 @@ export class GetAllPharmaciesComponent implements OnInit {
       // create a DOM element for the marker
       var el = document.createElement('div');
       el.className = 'marker';
+     // el.innerHTML='<img src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" title="this will be displayed as a tooltip" class="rounded-circle" style="width:40px;height:40px;">'
       //add photo to map to every pharmacy
       el.style.backgroundImage =
         'url(../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png)';
+        el.title=marker.properties.message;
       //image size
       el.style.width = marker.properties.iconSize[0] + 'px';
       el.style.height = marker.properties.iconSize[1] + 'px';
@@ -119,7 +121,7 @@ export class GetAllPharmaciesComponent implements OnInit {
   }
   //to add backgound (color || image ) to only this page
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#e2e6ea';
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize = "cover";
   }
 

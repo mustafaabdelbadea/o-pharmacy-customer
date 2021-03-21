@@ -1,10 +1,10 @@
 <div class="container mt-5 ">
   <div class="w-100  m-auto border border-secondary shadow-lg  bg-white rounded ">
-    <h1 class="m-3"><i class="fas fa-capsules"></i> Find our Pharmacies</h1>
+    <h1 class="m-3 headerTitle"><i class="fas fa-pills"></i> Find our Pharmacies</h1>
     <hr>
     <div class="row m-0 p-3">
       <div class="col-md-4 pharmaciesList border border-secondary shadow-lg  bg-white">
-        <h4 class="m-2"> <i class="fas fa-search-location    "></i> Search</h4>
+        <h4 class="m-2 searchTitle"> <i class="fas fa-search-location"></i> Search</h4>
         <form>
           <div class="form-group">
             <input [(ngModel)]="searchText" class="form-control" name="searchInput" placeholder="Enter Name Or Address">
@@ -19,7 +19,7 @@
             <a [routerLink]="['/GetOnePharmacy',pharmacy._id]">
               <h4 class="d-inline">{{pharmacy.name}}</h4>
             </a>
-            <p>{{pharmacy.locationAsAddress}}</p>
+            <p class="locationPar">{{pharmacy.locationAsAddress}}</p>
             <hr>
           </div>
           <div *ngIf="pharmacy.logo!=null">

@@ -1,16 +1,170 @@
-
-<div class="w-50 m-auto mt-5  loginsc align-self-center">
-    <h1 class="text-center pt-3 ">Order </h1>
-  <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
-        <div class="form-group">
-          <label class='label-color'for="">order</label>
-          <input formControlName='orderByTexting' type="text" class="form-control">
-          <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "  class="alert alert-danger mt-2"> order not vaild</div>
-        </div>
-        <img [src]="url" height="200"> <br/>
-        <input type='file' (change)="onSelectFile($event)">
-        <button  class="btn btn-primary float-right " type="submit">make an order</button>
-        
-  </form>
+<div class="container-fluid">
+  <div class="headerTitle">
+    <div class="col-md-12 text-center my-4  ">
+      <h1 class="my-5"> <i class="fas fa-pills"></i> Order Medicine Become Easy Now !</h1>
+    </div>
   </div>
-  
+</div>
+
+    <section class="my-4">
+      <div class="container-fluid">
+        <div class="row orderContent">
+          <div class="col-md-6  my-4">
+            <img src="../../assets/images/make an order/7882.png" class="img-fluid" alt="">
+          </div>
+       
+          <div class="col-md-6  my-4">
+              <div class="input-group my-5">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control" id="searchInput" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="row d-flex justify-content-between text-center">
+                <div class="col-md-3 my-3">
+                  <label for="write-order">
+                    <i class="tablets fas fa-tablets fa-4x p-3"></i>
+                  </label>
+                  <h5> Write Your Order</h5>
+                </div>
+                <div class="col-md-3 my-3">
+                  <label for="file-input">
+                    <i class=" tablets far fa-image  fa-4x p-3"></i>
+                  </label>
+                  <input id="file-input" type='file' class="d-none" (change)="onSelectFile($event)">
+                  <h5>Upload Your Prescription</h5>
+                </div>
+                <div class="col-md-3 my-3">
+                  <label for="searchInput">
+                  <i class="tablets fas fa-search fa-4x p-3"></i>
+                  </label>
+                  <h5> Search For Medicine</h5>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+     
+    </section>
+      <div class="container-fluid">
+             <div class="row"> 
+         <div class="col-md-6 ">
+          <img [src]="url" height="300" class="img-fluid w-75"> <br />
+
+        </div>
+        <div class="col-md-6">
+          <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+            <div class="form-group">
+              <textarea class="form-control" formControlName='orderByTexting' id="write-order"
+                rows="10"></textarea>
+              <!-- <input formControlName='orderByTexting' type="text" class="form-control"> -->
+              <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "
+                class="alert alert-danger mt-2"> order not vaild</div>
+            </div>
+            <button class="btn btn-primary float-right " type="submit">make an order</button>
+
+          </form>
+        </div>
+      
+      </div>
+
+      </div>
+ 
+
+
+
+
+<!-- 
+<div class="w-50 m-auto mt-5  loginsc align-self-center">
+  <h1 class="text-center pt-3 ">Order </h1>
+  <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+    <div class="form-group">
+      <label class='label-color' for="">order</label>
+      <input formControlName='orderByTexting' type="text" class="form-control">
+      <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "
+        class="alert alert-danger mt-2"> order not vaild</div>
+    </div>
+    <img [src]="url" height="200"> <br />
+    <input type='file' (change)="onSelectFile($event)">
+    <button class="btn btn-primary float-right " type="submit">make an order</button>
+
+  </form>
+</div> -->
+
+<!-- <div class="container-fluid">
+  <div class="headerTitle">
+    <div class="col-md-12 text-center my-4  ">
+      <h1 class="my-5"> <i class="fas fa-pills"></i> Order Medicine Become Easy Now !</h1>
+      <div class="row orderContent">
+        <div class="col-md-6  my-4">
+          <img src="../../assets/images/make an order/7882.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6  my-4">
+            <div class="input-group my-5">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+              </div>
+              <input type="text" class="form-control" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="row d-flex justify-content-between ">
+              <div class="col-md-3 my-3">
+                <i class="tablets fas fa-tablets fa-4x p-3"></i>
+                <h5> Write Your Order</h5>
+              </div>
+              <div class="col-md-3 my-3">
+                <label for="file-input">
+                  <i class=" tablets far fa-image  fa-4x p-3"></i>
+                </label>
+                <input id="file-input" type='file' class="d-none" (change)="onSelectFile($event)">
+                <h5>Upload Your Prescription</h5>
+              </div>
+              <div class="col-md-3 my-3">
+                <i class="tablets fas fa-search fa-4x p-3"></i>
+                <h5> Search For Medicine</h5>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row"> 
+         <div class="col-md-6 ">
+          <img [src]="url" height="300" class="img-fluid w-75"> <br />
+
+        </div>
+        <div class="col-md-6">
+          <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+            <div class="form-group">
+              <textarea class="form-control" formControlName='orderByTexting' id="exampleFormControlTextarea1"
+                rows="10"></textarea>
+              <input formControlName='orderByTexting' type="text" class="form-control"> 
+              <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "
+                class="alert alert-danger mt-2"> order not vaild</div>
+            </div>
+            <button class="btn btn-primary float-right " type="submit">make an order</button>
+
+          </form>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- 
+<div class="w-50 m-auto mt-5  loginsc align-self-center">
+  <h1 class="text-center pt-3 ">Order </h1>
+  <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+    <div class="form-group">
+      <label class='label-color' for="">order</label>
+      <input formControlName='orderByTexting' type="text" class="form-control">
+      <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "
+        class="alert alert-danger mt-2"> order not vaild</div>
+    </div>
+    <img [src]="url" height="200"> <br />
+    <input type='file' (change)="onSelectFile($event)">
+    <button class="btn btn-primary float-right " type="submit">make an order</button>
+
+  </form>
+</div> -->

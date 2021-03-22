@@ -1,1 +1,56 @@
 #map {  position: absolute; left: 0; right: 0; top: 200%; bottom: 0; width: 100%; height: 50%;  }
+.signIn-container{
+    background-color: white;
+}
+.image-container{
+   
+    height: 25vh;
+    // background-image: url('../../assets/images/mcaz1.png');
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background-color: #00bfff;
+}
+.layer{
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input:focus {
+    border: 3px solid #00bfff;
+  }
+  button[type=submit] {
+    background-color: #00bfff;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  button:disabled{
+    background-color: #9eeaf9;
+ 
+  }
+  a,a:visited,a:link{
+color: rgb(217,217,219);
+  }
+  a:hover{
+      color: #00bfff;
+  }
+  .signimg{
+    height: 90vh;;
+  }
+  .contentContainer{
+    height: 90vh;
+  }

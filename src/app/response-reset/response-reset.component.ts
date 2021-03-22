@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from "../services/auth.service";
@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResponseResetComponent implements OnInit {
   token: any;
+  isClicked:any=false;
+  isInvalidData:any;
+  responseMessage:any;
   //take data from form and check validation
   ResetForm = new FormGroup({
     'password': new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
@@ -26,9 +29,16 @@ export class ResponseResetComponent implements OnInit {
         console.log(err);
       });
   }
-  constructor(private _AuthService: AuthService, private _Router: Router, private _ActivatedRoute: ActivatedRoute) {
+  constructor(private _AuthService: AuthService, private _Router: Router, private _ActivatedRoute: ActivatedRoute,private elementRef: ElementRef) {
     this.token = _ActivatedRoute.snapshot.paramMap.get("token");
   }
+    
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage = 'url(../../assets/images/featured00.jpg)';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+
+
+ }
   ngOnInit(): void {
   }
 }

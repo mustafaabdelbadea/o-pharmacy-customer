@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,iBAAkB;EAC1B,aAAa,EAAE,GAAG;CACrB;;AAED,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,OAAO;CAC5B",
     "sources": [
         "order.component.scss"
     ],

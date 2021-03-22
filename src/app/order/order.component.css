@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=order.component.css.map */
+.tablets {
+  border: solid 2px #032B52;
+  border-radius: 50%;
+}
+
+section {
+  background-color: #E8F4F6;
+}
+/*# sourceMappingURL=order.component.css.map */

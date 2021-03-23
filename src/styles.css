@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: circular-book;
+  src: url("assets/fonts/CircularStd-Medium.ttf");
+}
+
+@font-face {
+  font-family: circular-bold;
+  src: url("assets/fonts/CircularStd-Bold.ttf");
+}
+
+body {
+  font-family: "circular-bold";
+}
 /*# sourceMappingURL=styles.css.map */

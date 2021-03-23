@@ -30,31 +30,51 @@ trying to read prescriptions or repeating the same order over and over.
 </div> -->
 
 <div class="container-fluid ">
-    <div class="row">
+    <div class="row flex-row-reverse">
         <div class="col-md-6 ">
-
-          
-                <div class="mt-5 h-100 d-flex align-items-between flex-wrap">
-                    <h2 >
-                        Welcome <br> To <span class="">
-                            O-pharmacy
-                            <br>
-                            Home Serivces
-                        </span>
-                    </h2>
-                <p>
+            <img src="../../assets/images/home/20944961.jpg" class="w-100" alt="">
+        </div>
+        <div class="col-md-6 align-self-center ">
+                <h1 class="ml-5 mb-3 display-4 headerHome">
+                    Welcome <br> To <span class="OpharmacyWord typed-element" >
+                        O-pharmacy   
+                    </span>
+                    <br>Home Serivces
+                </h1>
+                <p class="ml-5 headerDesc">
                     Lorem Ipsum is simply dummy text of
                     <br> the printing and typesetting industry. <br>
-                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                 </p>
-               </div>
-                
-           
-    
+                <button type="button" *ngIf='isLoggedIn' routerLink='/makeOrder' class="btn btn-info float-right">Order Now</button>
+                <button type="button" *ngIf='!isLoggedIn'routerLink='/signup' class="btn btn-info float-right">Join Us Now</button>
         </div>
-        <div class="col-md-6 float-right">
-            <img src="../../assets/images/home/20944961.jpg" class="w-100" alt="">
+    </div>
+</div>
 
+<div class="about-div">
+    <div class="container-fluid ">
+        <div class="row mx-5">
+            <div class="col-md-6">
+                <div class="aboutSpan">
+                    01.
+                    <span class="spanTest">About Us</span>
+                </div>
+                <div class="my-2 ml-5"> 
+                    <h3 class="">What We Are ?</h3>
+                    <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur iusto qui et ullam, illo ipsum, voluptas ipsam debitis atque unde quisquam voluptatum tenetur ducimus obcaecati. Rerum tenetur blanditiis possimus odio?</h6>
+                </div>
+                <ul class=" ml-5">
+                    <li class="my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                    <li class="my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+
+                    <li class="my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+                    <span >Fsfsfsfsfs</span>  
+
+                </ul>
+            </div> 
+            <div class="col-md-6">
+            </div>                
         </div>
     </div>
 </div>

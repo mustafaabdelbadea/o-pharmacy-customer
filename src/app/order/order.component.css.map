@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,iBAAkB;EAC1B,aAAa,EAAE,GAAG;CACrB;;AAED,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,OAAO;CAC5B",
+    "mappings": "ACAA,+EAA+E;AAC/E,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,0CAA0C;;;AAEnD,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,wCAAwC;;;AAIjD,AAAA,IAAI,CAAA;EACA,WAAW,EAFC,eAAe;CAG9B;;ADXD,AAAA,QAAQ,CAAA;EACJ,MAAM,EAAE,iBAAkB;EAC1B,aAAa,EAAE,GAAG;CACrB;;AAED,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,OAAO;CAC5B;;AACD,AAAA,CAAC,CAAA;EACG,KAAK,EAAE,kBAAkB;EACzB,gBAAgB,EAAE,OAAO;CAE5B",
     "sources": [
-        "order.component.scss"
+        "order.component.scss",
+        "../../styles.scss"
     ],
     "names": [],
     "file": "order.component.css"

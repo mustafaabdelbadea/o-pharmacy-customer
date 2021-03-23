@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: circular-book;
+    src: url('assets/fonts/CircularStd-Medium.ttf');
+}
+@font-face{
+    font-family: circular-bold;
+    src: url('assets/fonts/CircularStd-Bold.ttf');
+}
+$fontFamily:'circular-book';
+$fontFamilyBold:'circular-bold';
+body{
+    font-family: $fontFamilyBold;
+}
+$mainColor:#0099CC;
+$grayColor:#707070;
+$simple-line-font-path     : "/path/to/font/files";
+$simple-line-font-family   : "desired-name-font-family";
+$simple-line-icon-prefix   : "prefix-";

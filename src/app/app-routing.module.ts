@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:'reportProblem',component:ReportProblemComponent},
   //{path:'healthNews',component:HealthNewsComponent},
 //check if logged in and email verified 
-{path:'home',canActivate:[AuthGuard,VerifyGuard],component:HomeComponent},
+{path:'home',component:HomeComponent},
 
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',canActivate:[AuthGuard],component:NotVerifiedComponent},

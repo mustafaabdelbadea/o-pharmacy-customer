@@ -25,6 +25,7 @@ import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.com
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SearchPharmacyPipe } from './search-pharmacy.pipe';
+import {NgxTypedJsModule} from 'ngx-typed-js';
 
 
 @NgModule({
@@ -59,6 +60,8 @@ import { SearchPharmacyPipe } from './search-pharmacy.pipe';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxTypedJsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

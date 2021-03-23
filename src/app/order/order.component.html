@@ -8,7 +8,7 @@
 
     <section class="my-4">
       <div class="container-fluid">
-        <div class="row orderContent">
+        <div class="row orderContent flex-row-reverse">
           <div class="col-md-6  my-4">
             <img src="../../assets/images/make an order/7882.png" class="img-fluid" alt="">
           </div>
@@ -58,8 +58,10 @@
               <textarea class="form-control" formControlName='orderByTexting' id="write-order"
                 rows="10"></textarea>
               <!-- <input formControlName='orderByTexting' type="text" class="form-control"> -->
-              <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "
-                class="alert alert-danger mt-2"> order not vaild</div>
+              <!-- <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "> -->
+                <div *ngIf='!isOrderd' class="alert alert-danger mt-2"> Please Enter Your Order</div>
+
+              <!-- </div> -->
             </div>
             <button class="btn btn-primary float-right " type="submit">make an order</button>
 

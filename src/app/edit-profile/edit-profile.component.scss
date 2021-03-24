@@ -1,3 +1,4 @@
+// @import '../../styles.scss';
 
 $main-bgcolor :rgba(217,217,219,.7);// ;
 $second-bgcolor:rgba(255, 255, 255,.7);//rgb(217,217,219);
@@ -6,15 +7,18 @@ $btn-bgcolor:#00bfff;
 
 .mainDiv
 {
-    // background-color:$main-bgcolo ;
-   background-image: url("../../assets/images/tablets-capsules-multi-colored-drug-wallpaper.jpg");
-    //background-repeat: no-repeat;
-
+   background-color:white ;
    background-size: cover;
    background-position: center;
     
 }
 
+img 
+{
+    box-shadow: 0px 0px 15px rgba(255, 255,255,.6);
+    width: 100% ;
+    height: 100% ;
+}
 .mainCard
 {   padding: 3rem;
     color: $text-color;
@@ -23,9 +27,9 @@ $btn-bgcolor:#00bfff;
 }
 
 .oneEdit
-{   margin-bottom: .5rem;
-    padding: 1.5rem;
+{   padding: 1.5rem;
     background-color:$second-bgcolor;
+    border-radius: 3%;
 }
 
 .btn

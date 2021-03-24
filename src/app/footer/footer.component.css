@@ -1,1 +1,26 @@
-/* No CSS *//*# sourceMappingURL=footer.component.css.map */
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: circular-book;
+  src: url("assets/fonts/CircularStd-Medium.ttf");
+}
+
+@font-face {
+  font-family: circular-bold;
+  src: url("assets/fonts/CircularStd-Bold.ttf");
+}
+
+body {
+  font-family: "circular-bold";
+}
+
+footer {
+  background-color: #0099CC;
+}
+
+.downloadApp {
+  font-family: "circular-bold";
+  font-weight: 700 !important;
+  font-size: 1.5rem;
+  color: white;
+}
+/*# sourceMappingURL=footer.component.css.map */

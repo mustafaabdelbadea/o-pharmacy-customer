@@ -1,0 +1,11 @@
+@import '../../styles.scss';
+
+footer{
+    background-color: $mainColor;
+}
+.downloadApp{
+    font-family: $fontFamilyBold;
+    font-weight: 700 !important;
+    font-size: 1.5rem;
+    color: white;
+}

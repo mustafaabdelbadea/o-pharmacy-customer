@@ -47,4 +47,16 @@ li::marker {
   /* You can use px, but I think rem is more respecful */
   color: #0099CC;
 }
+
+.test {
+  text-decoration: underline;
+}
+
+.firstService {
+  font-family: "circular-bold";
+}
+
+.productSpan {
+  color: #93e4ff;
+}
 /*# sourceMappingURL=home.component.css.map */

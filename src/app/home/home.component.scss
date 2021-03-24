@@ -37,3 +37,16 @@ li::marker {
     font-size: 3rem; /* You can use px, but I think rem is more respecful */
     color: $mainColor;
 }
+.test{
+    text-decoration: underline;
+}
+.firstService{
+    font-family: $fontFamilyBold;
+}
+
+.productSpan{
+    color: rgb(147, 228, 255);
+}
+.about-div{
+    background-color: rgb(238, 238, 238);
+}

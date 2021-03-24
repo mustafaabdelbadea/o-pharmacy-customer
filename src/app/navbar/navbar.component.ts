@@ -7,11 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  isSignedIn=true;
+  isLoggedIn:boolean=false;
 
-  constructor() { }
+  constructor() {
+    this.isLogged();
+
+   }
 
   ngOnInit(): void {
   }
 
+  isLogged(){
+    if(localStorage.getItem('token')){
+      this.isLoggedIn=true;
+    }
+    else{
+      this.isLoggedIn=false;
+    }
+  }
 }

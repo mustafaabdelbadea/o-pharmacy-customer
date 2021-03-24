@@ -15,9 +15,18 @@ export class OrderHistoryComponent implements OnInit {
     _orderHistoryService.allOrders().subscribe(
 
       (data)=>{
+        console.log('tests')
+        if (data.message=='success') {
+          this.allOrdersData=data.customerOrders;
+        }
+        else if (data.message="You Didn't Order Yet") {
+          this.allOrdersData=null;   
+          console.log(this.allOrdersData);
+        }
+          
+
         
-        this.allOrdersData=data;   
-        console.log(data) 
+        // console.log(data) 
 },
 (error)=>{
         console.log(error) ;

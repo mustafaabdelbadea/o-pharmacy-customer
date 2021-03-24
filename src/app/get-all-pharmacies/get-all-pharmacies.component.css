@@ -1,3 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: circular-book;
+  src: url("assets/fonts/CircularStd-Medium.ttf");
+}
+
+@font-face {
+  font-family: circular-bold;
+  src: url("assets/fonts/CircularStd-Bold.ttf");
+}
+
+body {
+  font-family: "circular-bold";
+}
+
 #map {
   height: 60vh;
   position: relative;
@@ -40,5 +55,9 @@ a:link, a:visited, a:hover, a:active {
 
 .locationPar {
   color: #ccc;
+}
+
+.headerTitle {
+  color: #0099CC;
 }
 /*# sourceMappingURL=get-all-pharmacies.component.css.map */

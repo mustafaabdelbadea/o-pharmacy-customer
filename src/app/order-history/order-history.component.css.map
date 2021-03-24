@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACAA,+EAA+E;AAC/E,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,0CAA0C;;;AAEnD,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,wCAAwC;;;AAIjD,AAAA,IAAI,CAAA;EACA,WAAW,EAFC,eAAe;CAG9B;;ADXD,AAAA,YAAY,CAAA;EACR,WAAW,ECMH,eAAe;CDL1B;;AACD,AAAA,UAAU,AAAA,MAAM,CAAA;EACZ,UAAU,EAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,OAAiB;CAE9C;;AACD,AAAA,CAAC,AAAA,KAAK,EAAC,CAAC,AAAA,QAAQ,EAAE,CAAC,AAAA,MAAM,EAAC,CAAC,AAAA,OAAO,CAAC;EAC/B,eAAe,EAAE,IAAI;CACtB;;AACD,AAAA,cAAc,CAAA;EACV,KAAK,ECEA,OAAO;CDDf",
     "sources": [
-        "order-history.component.scss"
+        "order-history.component.scss",
+        "../../styles.scss"
     ],
     "names": [],
     "file": "order-history.component.css"

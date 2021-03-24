@@ -1,1 +1,32 @@
-/* No CSS *//*# sourceMappingURL=order-history.component.css.map */
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: circular-book;
+  src: url("assets/fonts/CircularStd-Medium.ttf");
+}
+
+@font-face {
+  font-family: circular-bold;
+  src: url("assets/fonts/CircularStd-Bold.ttf");
+}
+
+body {
+  font-family: "circular-bold";
+}
+
+.noOrderText {
+  font-family: "circular-book";
+}
+
+.shadowDiv:hover {
+  -webkit-box-shadow: 10px 10px 5px #1cb3e6;
+          box-shadow: 10px 10px 5px #1cb3e6;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.numberandDate {
+  color: #707070;
+}
+/*# sourceMappingURL=order-history.component.css.map */

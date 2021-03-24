@@ -13,12 +13,30 @@ export class GetOnePharmacyComponent implements OnInit {
   pharmacyID:any;
   lng: any;
   latt: any;
+  pharmacyName:any;
+  pharmacyLogo:any;
+  pharmacyAddress:any;
+  pharmacyRate:any;
+  pharmacyPhones:any;
   constructor(_ActivatedRoute:ActivatedRoute,_GetAllPharmaciesService:GetAllPharmaciesService) { 
     this.pharmacyID =  _ActivatedRoute.snapshot.paramMap.get('pharmacyID')
 console.log(this.pharmacyID)
     _GetAllPharmaciesService.onePharmacy(this.pharmacyID).subscribe(
       (data)=>{
         this.onePharmacyData=data;
+        this.pharmacyName=data.name;
+        this.pharmacyLogo=data.logo;
+        this.pharmacyAddress=data.locationAsAddress;
+        if (data.rate==null||data.rate==undefined) {
+          this.pharmacyRate=null;
+
+        }
+        else
+        {
+          this.pharmacyRate=data.rate;
+
+        }
+        this.pharmacyPhones=data.phones[0];
         this.lng=this.onePharmacyData.locationAsCoordinates.coordinates.lon;
         this.latt=this.onePharmacyData.locationAsCoordinates.coordinates.lat;
         this.map();

@@ -26,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SearchPharmacyPipe } from './search-pharmacy.pipe';
 import {NgxTypedJsModule} from 'ngx-typed-js';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import {NgxTypedJsModule} from 'ngx-typed-js';
     FooterComponent,
     HomeComponent,
     SearchPharmacyPipe,
+    NavbarComponent,
     
   ],
   imports: [

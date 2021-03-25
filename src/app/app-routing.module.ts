@@ -24,10 +24,10 @@ import { HomeComponent } from './home/home.component';
 import { NotVerifiedComponent } from './not-verified/not-verified.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:"signin",pathMatch:"full"},
-  { path: 'signin', component: SigninComponent },
-  { path: 'requestreset', component: RequestResetComponent },
-  { path: 'signup', component: SignupComponent },
+  {path:"",redirectTo:"home",pathMatch:"full"},
+  { path: 'signin',canActivate:[AuthLoginGuard], component: SigninComponent },
+  { path: 'requestreset',canActivate:[AuthLoginGuard], component: RequestResetComponent },
+  { path: 'signup',canActivate:[AuthLoginGuard], component: SignupComponent },
     //{ path: 'signin',canActivate:[AuthLoginGuard] , component: SigninComponent },
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
   {path:'reportProblem',component:ReportProblemComponent},
@@ -37,18 +37,18 @@ const routes: Routes = [
 
   {path:'healthNews',canActivate:[AuthGuard,VerifyGuard],component:HealthNewsComponent},
   {path:'verifyAccount',canActivate:[AuthGuard],component:NotVerifiedComponent},
-  {path:'editProfile',component:EditProfileComponent},
+  {path:'editProfile',canActivate:[AuthGuard,VerifyGuard],component:EditProfileComponent},
   {path:'makeOrder',canActivate:[AuthGuard,VerifyGuard],component:OrderComponent},
-  {path:'orderHistory',component:OrderHistoryComponent},
-  {path:'getAllPharmacies',component:GetAllPharmaciesComponent},
-  {path:'customerCurrentOrders',component:CustomerCurrentOrdersComponent},
-  {path:'customerHistory',component:CustomerHistoryComponent},
-  {path:'getMedicalHistory',component:GetMedicalHistoryComponent},
-  {path:'getOneOrder/:currentOrder',component:GetOneOrderComponent},
-  {path:'GetOnePharmacy/:pharmacyID',component:GetOnePharmacyComponent},
+  {path:'orderHistory',canActivate:[AuthGuard,VerifyGuard],component:OrderHistoryComponent},
+  {path:'getAllPharmacies',canActivate:[AuthGuard,VerifyGuard],component:GetAllPharmaciesComponent},
+  {path:'customerCurrentOrders',canActivate:[AuthGuard,VerifyGuard],component:CustomerCurrentOrdersComponent},
+  {path:'customerHistory',canActivate:[AuthGuard,VerifyGuard],component:CustomerHistoryComponent},
+  {path:'getMedicalHistory',canActivate:[AuthGuard,VerifyGuard],component:GetMedicalHistoryComponent},
+  {path:'getOneOrder/:currentOrder',canActivate:[AuthGuard,VerifyGuard],component:GetOneOrderComponent},
+  {path:'GetOnePharmacy/:pharmacyID',canActivate:[AuthGuard,VerifyGuard],component:GetOnePharmacyComponent},
   //take token from ts file and send it backend
-  { path: 'customerForgotPassword/:token', component: ResponseResetComponent },
-  { path: 'customerVerifyEmail/:token', component: VerifyEmailComponent },
+  { path: 'customerForgotPassword/:token',canActivate:[AuthLoginGuard], component: ResponseResetComponent },
+  { path: 'customerVerifyEmail/:token',canActivate:[AuthLoginGuard], component: VerifyEmailComponent },
   {path:"**",component:NotFoundComponent}
 ];
 

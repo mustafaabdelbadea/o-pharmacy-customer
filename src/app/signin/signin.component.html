@@ -1,107 +1,39 @@
 
-<!-- <div class="col-lg-6 col-md-8 col-sm-8 col-10 col-xs-10 align-self-center m-auto">
-  <div class="mt-5 align-self-center  border   bg-white"> -->
-<!-- 
-    <div class=" image-container  border  rounded-top align-self-center" >
-      <div class="layer">
-        <h1 class="text-center  text-white pt-5 fs-1">Sign in</h1>
+<div class="mainDiv my-5">
+  <div class="container m-auto border border-secondary shadow-lg  bg-white rounded">
 
+    <h1 class="text-center pt-5">Sign in </h1>
+    <div class="row">
+      <div class="col-md-6">
+  <img src="../../assets/images/login/Login.gif" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-6 py-2">
+        <form [formGroup]='signinForm' class="w-100 container m-auto py-5 " (ngSubmit)='signIn()'>
+          <div class="form-inline">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" formControlName='email' placeholder="example@example.com">
+          </div>
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName='password' name="password" placeholder="************">
+          <div *ngIf="isInvalidData" class="alert alert-danger border rounded-0" role="alert">
+            {{responseMessage}}
+          </div>
+          <div class="d-flex justify-content-between">
+            <a routerLink='/signup'>Don't have account? , Register</a>
+            <a routerLink='/requestreset'>
+              <p>Forgot Password ?</p>
+            </a>
+  
+  
+          </div>
+  
+          <button type="submit" [disabled]='signinForm.invalid' class="float-right"><span *ngIf="!isClicked">Sign
+              In</span><span *ngIf="isClicked">Waiting....</span></button>
+  
+  
+  
+        </form>
       </div>
     </div>
-     -->
-    <!-- <div class="container m-auto signForm pb-5">
-      <h1 class="text-center pt-5">Sign in </h1>
-      <form [formGroup]='signinForm' class="w-100 container m-auto py-5 " (ngSubmit)='signIn()'>
-        <div class="form-inline">
-          <label for="email">Email</label>
-          <input type="text"  id="email" name="email" formControlName='email' placeholder="example@example.com">
-        </div>
-        <label for="password">Password</label>
-        <input type="password" id="password" formControlName='password' name="password" placeholder="************">
-        <div *ngIf="isInvalidData" class="alert alert-danger border rounded-0" role="alert">
-          {{responseMessage}}
-        </div>
-        <div class="d-flex justify-content-between">
-          <a routerLink='/signup'>Don't have account? , Register</a>
-          <a routerLink='/requestreset'><p>Forgot Password ?</p></a>
-
-          
-        </div>
-
-        <button type="submit" [disabled]='signinForm.invalid' class="float-right"><span *ngIf="!isClicked">Sign In</span><span *ngIf="isClicked">Waiting....</span></button>
-     
-      
-        
-  </form>
-  
-    </div>
-  
-  </div>
-</div> -->
-  
-<div class="container signContent mt-5 ">
-  <div class="col-md-12 ">
-    
-    <img src="../../assets/images/pills-medical-injection-shopping-trolley-blue-background_s130265-6900.jpg" class="shadow-lg w-50 signimg float-left" alt="">
-    <div class="w-50 float-right shadow-lg">
-      <div class=" align-self-center  border contentContainer shadow-lg bg-white">
-        <!-- 
-            <div class=" image-container  border  rounded-top align-self-center" >
-              <div class="layer">
-                <h1 class="text-center  text-white pt-5 fs-1">Sign in</h1>
-        
-              </div>
-            </div>
-             -->
-            <div class="container m-auto signForm pb-5">
-              <h1 class="text-center pt-5">Sign in </h1>
-              <form [formGroup]='signinForm' class="w-100 container m-auto py-5 " (ngSubmit)='signIn()'>
-                <div class="form-inline">
-                  <label for="email">Email</label>
-                  <input type="text"  id="email" name="email" formControlName='email' placeholder="example@example.com">
-                </div>
-                <label for="password">Password</label>
-                <input type="password" id="password" formControlName='password' name="password" placeholder="************">
-                <div *ngIf="isInvalidData" class="alert alert-danger border rounded-0" role="alert">
-                  {{responseMessage}}
-                </div>
-                <div class="d-flex justify-content-between">
-                  <a routerLink='/signup'>Don't have account? , Register</a>
-                  <a routerLink='/requestreset'><p>Forgot Password ?</p></a>
-        
-                  
-                </div>
-        
-                <button type="submit" [disabled]='signinForm.invalid' class="float-right"><span *ngIf="!isClicked">Sign In</span><span *ngIf="isClicked">Waiting....</span></button>
-             
-              
-                
-          </form>
-          
-            </div>
-          
-          </div>    </div>
   </div>
 </div>
-<!-- 
-
-
-<div class="w-50 m-auto mt-5  loginsc align-self-center">
-    <h1 class="text-center pt-3 ">Sign  In </h1>
-  <form [formGroup]='signinForm' class="w-100 container m-auto py-5" (ngSubmit)='signIn()'>
-        <div class="form-group">
-          <label class='label-color'for="">Email</label>
-          <input formControlName='email' type="email" class="form-control">
-          <div *ngIf="signinForm.controls.email.invalid&&signinForm.controls.email.touched "  class="alert alert-danger mt-2"> Email not vaild</div>
-        </div>
-        <div class="form-group">
-          <label class='label-color'for="">Password</label>
-          <input formControlName='password' type="password" class="form-control">
-          <div *ngIf="signinForm.controls.password.invalid&&signinForm.controls.password.touched "  class="alert alert-danger mt-2"> Password not vaild</div>
-        </div>
-        <a routerLink='/signup'>Don't have account? , Register</a>
-        <button [disabled]='signinForm.invalid' class="btn btn-primary float-right " type="submit">Sign In</button>
-        
-  </form>
-  </div>
-    -->

@@ -27,11 +27,14 @@ export class SigninComponent implements OnInit {
       if (data.message == 'success') {
         this.isClicked=false;
         localStorage.setItem('token', data.token);
+        window.location.reload();
       }
       else if(data.message=='email not Verified'){
         this.isClicked=false;
 
         localStorage.setItem('token', data.token);
+        window.location.reload();
+
       }
       else {
         this.isClicked=false;
@@ -48,8 +51,8 @@ export class SigninComponent implements OnInit {
   constructor(private _AuthService: AuthService, private _Router: Router,private elementRef: ElementRef) { }
   
   ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
 
 
  }

@@ -1,23 +1,54 @@
+@import '../../styles.scss';
 
-.forpharmacy
-{background-color: #55D4FF;//rgb(217,217,219);;
-color: black;
-box-shadow: 0px 0px 15px ;
-border-radius: 2%;
-height: auto;
-width: 50rem;
+.mainDiv
+{
+   background-color: #E8F4F6;
 }
 
-img 
+.forpharmacy
+{background-color:white;// $mainColor;//rgb(217,217,219);;
+font-family: $fontFamily;
+color: black;// white;
+box-shadow: 0px 0px 15px ;
+border-radius: 4%;
+height: auto;
+width: 50rem;
+font-size: 1.5rem;
+padding-bottom: .8rem;
+}
+
+img
 {
-    box-shadow: 0px 0px 15px rgba(255, 255,255,.6);
+    //box-shadow: 0px 0px 15px $mainColor;
     width: 100% ;
-    height: 75% ;
+    height: 50% ;
     border-radius: 50%;
+    padding: 3rem;
+}
+
+img .notfound
+{
+    box-shadow: none;
+    width: 20rem ;
+    height: 20rem ;
+    border-radius: none;
 }
 
 .map
 {
-    width: 15rem; 
-    height: 15rem;
+    width: 100%; 
+    height: 25rem;
+}
+
+.for-rate
+{
+ // background-color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: .5rem;
+  text-align: center;
+  padding-top:  .8rem;
+  //position: absolute;
+  //top: 2%;
+  //left: 2%;
 }

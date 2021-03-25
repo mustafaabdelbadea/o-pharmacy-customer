@@ -1,17 +1,28 @@
-<div class="py-2" style="background-color: rgb(217,217,219);">
-  <div class="row m-auto d-flex justify-content-around forpharmacy">
-    <div class=" h-auto w-auto my-auto col-sm-10 col-md-5 col-lg-5 ">
-        <h3 class="pb-3 text-center"> {{ pharmacyName }} </h3>
-        <img class=" rounded " *ngIf="pharmacyLogo== null " src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" class="card-img-top" alt="...">
-       <img class=" rounded " *ngIf="pharmacyLogo!= null" src="{{pharmacyLogo}}" class="card-img-top" alt="...">
-    </div>    
-   <div class=" h-75 col-sm-10 col-md-6 col-lg-6  pt-3 mt-3" >
-       <h4 *ngIf="pharmacyRate!= null" class="pb-3" style="font-size: large" ><strong>rating :</strong> <span style=" font-weight: 600;"> {{pharmacyRate}}</span></h4>
-       <div class="pb-3" >
+<div class="mainDiv py-3">
+  <div  class="py-2 w-100  " >
+    <div class="row m-auto d-flex justify-content-around pt-2 w-75 forpharmacy">
+      <div class="w-50 d-flex h-25 py-4 my-4 mx-auto" *ngIf="onePharmacyData== null"><img class="notfound" src="../../assets/images/not found/notfousnd.png" alt=""> <span style="font-size: x-large;"> NO PHARMACY WITH THIS ID</span> </div>
+      <div *ngIf="onePharmacyData!= null" class=" my-auto col-sm-10 col-md-5 col-lg-5 justify-content-center ">
+        <div class="w-100 justify-content-center"> 
+        <img class=" mx-auto " *ngIf="pharmacyLogo== null " src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" class="card-img-top" alt="...">
+        <img class=" mx-auto " *ngIf="pharmacyLogo!= null" src="{{pharmacyLogo}}" class="card-img-top" alt="...">
+        </div>
+        <h2 class="my-1 text-center"> {{ pharmacyName }} </h2>
+        <div *ngIf="pharmacyRate!= null" class=" mx-auto for-rate" style="font-size: large; font-weight: 600;"> 
+          <i class="fas fa-star" style="color: gold; width: auto;"></i>{{pharmacyRate}}
+        </div>
+        
+        <div *ngIf="pharmacyRate== null" class=" mx-auto for-rate" style="font-size: large; font-weight: 600;"> 
+          <i class="fas fa-star" style="color: gold;"></i>__
+        </div>
         <p class="text-center"><strong>address : </strong>{{pharmacyAddress}}</p>
         <p class="text-center"><strong>phones : </strong>{{pharmacyPhones}}</p>
-        <div id="map" class=" form-control m-auto map"></div>
-       </div>
-   </div>
-</div>
+        </div>    
+    <div  class=" col-sm-10 col-md-6 col-lg-6  mt-5" >
+        <div class="" >
+          <div id="map" class=" m-auto map"></div>
+        </div>
+    </div>
+  </div>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   isLoggedIn:boolean=false;
-
+token:any=localStorage.getItem('token');
+name:any;
+email:any;
+ decoded:any;
+ photo:any;
   constructor() {
     this.isLogged();
 
@@ -18,11 +23,21 @@ export class NavbarComponent implements OnInit {
   }
 
   isLogged(){
-    if(localStorage.getItem('token')){
+    if(this.token){
       this.isLoggedIn=true;
+      this.decoded = jwt_decode(this.token);
+      this.name=this.decoded.name;
+      this.email=this.decoded.email;
+      this.photo=this.decoded.photo;
     }
     else{
       this.isLoggedIn=false;
     }
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    window.location.reload();
+  
   }
 }

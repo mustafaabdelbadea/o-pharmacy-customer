@@ -13,7 +13,7 @@ export class NotFoundComponent implements OnInit {
   }
   //to add backgound (color || image ) to only this page
   ngAfterViewInit() {
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#e2e6ea';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize = "cover";
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#e2e6ea';
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize = "cover";
   }
 }

@@ -1,4 +1,13 @@
 .navImage {
   width: 10rem;
 }
+
+.drop-down-img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.dropDownItems:hover {
+  background-color: #09c;
+}
 /*# sourceMappingURL=navbar.component.css.map */

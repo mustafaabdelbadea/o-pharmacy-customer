@@ -31,16 +31,18 @@
               "src/assets"
             ],
             "styles": [        
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
               "node_modules/simple-line-icons/scss/simple-line-icons.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "src/styles.scss"
             ],
             "scripts": [
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
 
             ]
           },

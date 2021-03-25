@@ -17,3 +17,17 @@ $grayColor:#707070;
 $simple-line-font-path     : "/path/to/font/files";
 $simple-line-font-family   : "desired-name-font-family";
 $simple-line-icon-prefix   : "prefix-";
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input:focus {
+    border: 3px solid #00bfff;
+  }

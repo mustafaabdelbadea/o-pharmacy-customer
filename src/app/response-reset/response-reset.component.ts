@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ResponseResetComponent implements OnInit {
   token: any;
   isClicked:any=false;
-  isInvalidData:any;
+  isSuccess:any;
   responseMessage:any;
   //take data from form and check validation
   ResetForm = new FormGroup({
@@ -20,9 +20,15 @@ export class ResponseResetComponent implements OnInit {
   });
   //call reset password service api 
   ResetPass() {
+    this.isClicked=true;
+    
     console.log(this.ResetForm.value)
     //take the token from the url
     this._AuthService.forgotPassword(this.ResetForm.value, this.token).subscribe(data => {
+      this.isClicked=false;
+        this.isSuccess=true;
+        this.responseMessage=data.message;
+      
       console.log(data)
     },
       err => {
@@ -34,8 +40,7 @@ export class ResponseResetComponent implements OnInit {
   }
     
   ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage = 'url(../../assets/images/featured00.jpg)';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+
 
 
  }

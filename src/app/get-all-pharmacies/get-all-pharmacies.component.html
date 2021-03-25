@@ -1,37 +1,39 @@
-<div class="container my-5 ">
-  <div class="w-100  m-auto border border-secondary shadow-lg  bg-white rounded ">
-    <h1 class="m-3 headerTitle"><i class="fas fa-pills"></i> Find our Pharmacies</h1>
-    <hr>
-    <div class="row m-0 p-3">
-      <div class="col-md-4 pharmaciesList border border-secondary shadow-lg  bg-white">
-        <h4 class="m-2 searchTitle"> <i class="fas fa-search-location"></i> Search</h4>
-        <form>
-          <div class="form-group">
-            <input [(ngModel)]="searchText" class="form-control" name="searchInput" placeholder="Enter Name Or Address">
-          </div>
-        </form>
-        <div *ngFor="let pharmacy of allPharmaciesData | searchPharmacy:searchText">
-          <div *ngIf="pharmacy.logo==null">
-            <div class="w-25 d-inline ">
-              <img src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png"
-                class=" logoContainer rounded-circle d-line" alt="">
+<div class="mainDiv py-5">
+  <div class="container my-5 ">
+    <div class="w-100  m-auto border border-secondary shadow-lg  bg-white rounded ">
+      <h1 class="m-3 headerTitle"><i class="fas fa-pills"></i> Find our Pharmacies</h1>
+      <hr>
+      <div class="row m-0 p-3">
+        <div class="col-md-4 pharmaciesList border border-secondary shadow-lg  bg-white">
+          <h4 class="m-2 searchTitle"> <i class="fas fa-search-location"></i> Search</h4>
+          <form>
+            <div class="form-group">
+              <input [(ngModel)]="searchText" class="form-control" name="searchInput" placeholder="Enter Name Or Address">
             </div>
-            <a [routerLink]="['/GetOnePharmacy',pharmacy._id]">
+          </form>
+          <div *ngFor="let pharmacy of allPharmaciesData | searchPharmacy:searchText">
+            <div *ngIf="pharmacy.logo==null">
+              <div class="w-25 d-inline ">
+                <img src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png"
+                  class=" logoContainer rounded-circle d-line" alt="">
+              </div>
+              <a [routerLink]="['/GetOnePharmacy',pharmacy._id]">
+                <h4 class="d-inline">{{pharmacy.name}}</h4>
+              </a>
+              <p class="locationPar">{{pharmacy.locationAsAddress}}</p>
+              <hr>
+            </div>
+            <div *ngIf="pharmacy.logo!=null">
+              <img src="{{pharmacy.logo}}" class=" w-25 rounded-circle d-inline" alt="">
               <h4 class="d-inline">{{pharmacy.name}}</h4>
-            </a>
-            <p class="locationPar">{{pharmacy.locationAsAddress}}</p>
-            <hr>
-          </div>
-          <div *ngIf="pharmacy.logo!=null">
-            <img src="{{pharmacy.logo}}" class=" w-25 rounded-circle d-inline" alt="">
-            <h4 class="d-inline">{{pharmacy.name}}</h4>
-            <p>{{pharmacy.locationAsAddress}}</p>
-            <hr>
+              <p>{{pharmacy.locationAsAddress}}</p>
+              <hr>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-8 h-100 ">
-        <div id="map" class="w-100 mt-3"></div>
+        <div class="col-md-8 h-100 ">
+          <div id="map" class="w-100 mt-3"></div>
+        </div>
       </div>
     </div>
   </div>

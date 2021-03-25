@@ -14,13 +14,13 @@
             <div class="align-self-center">
                 <input formControlName='email' type="email" placeholder="Enter your email address" class="form-control">
             <div *ngIf="resetForm.controls.email.invalid&&resetForm.controls.email.touched "  class="alert alert-danger mt-2"> Email not vaild</div>
-            <div *ngIf="isSuccess" class="alert alert-success text-center mt-2 btn-close"  role="alert">
+            <div *ngIf="isSuccess" class="alert alert-info text-center mt-2 btn-close"  role="alert">
               {{responseMessage}}
           </div>
           </div>
             </div>
           
-          <button [disabled]='resetForm.invalid' class="btn btn-primary float-right " type="submit"><span *ngIf="!isClicked">Reset Password</span><span *ngIf="isClicked">Waiting....</span></button>
+          <button [disabled]='resetForm.invalid' class="btn btn-primary float-right " type="submit"><span *ngIf="!isClicked">Send Email</span><span *ngIf="isClicked">Waiting....</span></button>
         
     </form>
        </div>

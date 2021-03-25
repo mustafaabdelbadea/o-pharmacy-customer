@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,KAAK;CAChB",
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,KAAK;CAChB;;AACD,AAAA,QAAQ,CAAA;EACJ,gBAAgB,EAAE,IAAI;CACzB",
     "sources": [
         "verify-email.component.scss"
     ],

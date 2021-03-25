@@ -12,8 +12,8 @@ export class NotVerifiedComponent implements OnInit {
   ngOnInit(): void {
   }
   ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
 
 
  }

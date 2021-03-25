@@ -22,8 +22,8 @@ export class VerifyEmailComponent implements OnInit {
       });
   }
   ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
+    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundSize= "cover";
 
 
  }

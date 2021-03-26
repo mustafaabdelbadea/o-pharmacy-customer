@@ -1,18 +1,21 @@
-<div class="d-flex justify-content-around row py-4 w-100">
+<div class="mainDiv">
+    <img src="../../assets/images/health news/pharmacy-overview-new-banner.png" class="img-fluid w-100 h-50" alt="">
 
-  <div *ngFor="let new of news" class="card my-3 mx-1 col-sm-10 col-md-5 col-lg-3 pt-4 " style=" width: 16rem;">
-      <img src="{{new.urlToImage}}" class="card-img-top" alt="...">
-      <div class="card-body text-right">
-      <div class="container-fluid">
-        <h6>{{new.source.name}}</h6>
-       <h5 class="card-title">{{news.title}}</h5>
-      </div>
-      <div class="container-fluid">
-        
-        <p class="card-text"><a href="{{new.url}}">read more اقرأ المزيد</a></p>
-        
-      </div>
-      </div>
-   </div>
 
-</div> 
+<div class="container">
+<div class="row">
+   <div *ngFor="let new of news" class="col-md-6 my-3" >
+    
+      <div class="card h-100 text-center shadow-lg ">
+        <img src={{new.urlToImage}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <a href={{new.url}}><h3 class="card-title">{{new.title}}</h3></a>
+          <p class="card-text">{{new.description}}</p>
+        </div>
+      
+    </div>
+</div>
+ 
+
+</div>
+

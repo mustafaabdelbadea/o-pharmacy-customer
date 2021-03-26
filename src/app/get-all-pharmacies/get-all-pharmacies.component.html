@@ -24,9 +24,11 @@
               <hr>
             </div>
             <div *ngIf="pharmacy.logo!=null">
-              <img src="{{pharmacy.logo}}" class=" w-25 rounded-circle d-inline" alt="">
-              <h4 class="d-inline">{{pharmacy.name}}</h4>
-              <p>{{pharmacy.locationAsAddress}}</p>
+              <img src="{{pharmacy.logo}}" class=" logoPharmacy rounded-circle d-inline" alt="">
+              <a [routerLink]="['/GetOnePharmacy',pharmacy._id]">
+                <h4 class="d-inline">{{pharmacy.name}}</h4>
+              </a>                      
+                      <p class="locationPar"> {{pharmacy.locationAsAddress}}</p>
               <hr>
             </div>
           </div>

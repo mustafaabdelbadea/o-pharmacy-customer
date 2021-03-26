@@ -28,7 +28,7 @@ email:any;
       this.decoded = jwt_decode(this.token);
       this.name=this.decoded.name;
       this.email=this.decoded.email;
-      this.photo=this.decoded.photo;
+      this.photo=localStorage.getItem('photo');
     }
     else{
       this.isLoggedIn=false;
@@ -37,6 +37,7 @@ email:any;
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('phtot');
     window.location.reload();
   
   }

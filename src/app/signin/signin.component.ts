@@ -27,7 +27,10 @@ export class SigninComponent implements OnInit {
       if (data.message == 'success') {
         this.isClicked=false;
         localStorage.setItem('token', data.token);
-        window.location.reload();
+        localStorage.setItem('photo', data.photo);
+
+        //console.log('test',data.photo)
+         window.location.reload();
       }
       else if(data.message=='email not Verified'){
         this.isClicked=false;

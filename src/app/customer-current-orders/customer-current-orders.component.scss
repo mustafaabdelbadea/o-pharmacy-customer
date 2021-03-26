@@ -1,0 +1,16 @@
+@import '../../styles.scss';
+
+.noOrderText{
+    font-family: $fontFamily;
+}
+.shadowDiv:hover{
+    box-shadow: 10px 10px 5px rgb(28, 179, 230);
+
+}
+a:link,a:visited, a:hover,a:active {
+    text-decoration: none;
+  }
+  .numberandDate{
+      color: $grayColor;
+  }
+ 

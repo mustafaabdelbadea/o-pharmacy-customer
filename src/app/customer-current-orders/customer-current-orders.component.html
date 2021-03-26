@@ -1,0 +1,31 @@
+<div class="container">
+    <div *ngIf="currentOrderData==null">
+      <div class="col-md-12 text-center">
+          <img src="../../assets/images/order history/item_nos.png" class="img-fluid py-3" alt="">
+            <h1 class="noOrderText">You Didn't Order Yet</h1>
+      </div>
+  
+    </div>
+    <div *ngIf='currentOrderData!=null'>
+      <div class="ordersFound my-5">
+        <div *ngFor='let oneOrder of currentOrderData ; index as i;'>
+          <a  [routerLink]="['/getOneOrder',oneOrder._id]">
+          <div class="shadowDiv col-md-12 border-info border rounded my-3 p-3 ">
+           
+            <div class="d-flex justify-content-between  ">
+             
+              <h3 class="mx-1 text-center numberandDate">#{{i+1}}</h3>            
+              <h6 class="mx-1 text-center numberandDate">{{oneOrder.date}}</h6>
+              <h3 class="mx-1 text-center numberandDate">{{oneOrder.globalStatus}}</h3>
+            </div>
+            </div></a> 
+         
+       
+        
+      </div>
+    
+  
+      </div>
+      
+    </div>
+    </div>

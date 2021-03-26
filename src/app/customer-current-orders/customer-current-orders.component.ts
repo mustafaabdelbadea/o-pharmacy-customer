@@ -14,8 +14,14 @@ export class CustomerCurrentOrdersComponent implements OnInit {
 
 _CustomerCurrentOrdersService.currentOrder().subscribe( (data)=>{
         
-  this.currentOrderData = data; 
-  console.log(data)
+
+  if (data.message=='success') {
+    this.currentOrderData=data.customerOrders;
+  }
+  else if (data.message="no order founds") {
+    this.currentOrderData=null;   
+    console.log(this.currentOrderData);
+  }
 
 },
 err => {

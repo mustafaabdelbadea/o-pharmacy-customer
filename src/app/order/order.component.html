@@ -6,69 +6,69 @@
   </div>
 </div>
 
-    <section class="my-4">
-      <div class="container-fluid">
-        <div class="row orderContent flex-row-reverse">
-          <div class="col-md-6  my-4">
-            <img src="../../assets/images/make an order/7882.png" class="img-fluid" alt="">
+<section class="my-4">
+  <div class="container-fluid">
+    <div class="row orderContent flex-row-reverse">
+      <div class="col-md-6  my-4">
+        <img src="../../assets/images/make an order/7882.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-md-6  my-4">
+        <div class="input-group my-5">
+          <input type="text" class="form-control " id="searchInput" placeholder="Search for medicine">
+        </div>
+        <div class="row d-flex justify-content-between text-center">
+          <div class="col-md-3 my-3">
+            <label for="write-order">
+              <i class="tablets fas fa-tablets fa-4x p-3"></i>
+            </label>
+            <h5 class="iWords"> Write Your Order</h5>
           </div>
-       
-          <div class="col-md-6  my-4">
-              <div class="input-group my-5">
-                <input type="text" class="form-control " id="searchInput" placeholder="Search for medicine">
-              </div>
-              <div class="row d-flex justify-content-between text-center">
-                <div class="col-md-3 my-3">
-                  <label for="write-order">
-                    <i class="tablets fas fa-tablets fa-4x p-3"></i>
-                  </label>
-                  <h5 class="iWords"> Write Your Order</h5>
-                </div>
-                <div class="col-md-3 my-3">
-                  <label for="file-input">
-                    <i class=" tablets far fa-image  fa-4x p-3"></i>
-                  </label>
-                  <input id="file-input" type='file' class="d-none" (change)="onSelectFile($event)">
-                  <h5 class="iWords">Upload Your Prescription</h5>
-                </div>
-                <div class="col-md-3 my-3">
-                  <label for="searchInput">
-                  <i class="tablets fas fa-search fa-4x p-3"></i>
-                  </label>
-                  <h5 class="iWords"> Search For Medicine</h5>
-                </div>
-              </div>
+          <div class="col-md-3 my-3">
+            <label for="file-input">
+              <i class=" tablets far fa-image  fa-4x p-3"></i>
+            </label>
+            <input id="file-input" type='file' class="d-none" (change)="onSelectFile($event)">
+            <h5 class="iWords">Upload Your Prescription</h5>
+          </div>
+          <div class="col-md-3 my-3">
+            <label for="searchInput">
+              <i class="tablets fas fa-search fa-4x p-3"></i>
+            </label>
+            <h5 class="iWords"> Search For Medicine</h5>
           </div>
         </div>
       </div>
-     
-    </section>
-      <div class="container-fluid">
-             <div class="row"> 
-         <div class="col-md-6 ">
-          <img [src]="url" height="300" class="img-fluid w-75"> <br />
+    </div>
+  </div>
+
+</section>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 ">
+      <img [src]="url" height="300" class="img-fluid w-75"> <br />
+
+    </div>
+    <div class="col-md-6">
+      <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
+        <div class="form-group">
+          <textarea class="form-control" formControlName='orderByTexting' id="write-order" rows="10"></textarea>
+
+          <div *ngIf='!isOrderd' class="alert alert-danger mt-2"> Please Enter Your Order</div>
 
         </div>
-        <div class="col-md-6">
-          <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
-            <div class="form-group">
-              <textarea class="form-control" formControlName='orderByTexting' id="write-order"
-                rows="10"></textarea>
-              <!-- <input formControlName='orderByTexting' type="text" class="form-control"> -->
-              <!-- <div *ngIf="orderForm.controls.orderByTexting.invalid&&orderForm.controls.orderByTexting.touched "> -->
-                <div *ngIf='!isOrderd' class="alert alert-danger mt-2"> Please Enter Your Order</div>
+        <div *ngIf='returnMessage' class="alert alert-info mt-2"> {{returnMessage}}</div>
 
-              <!-- </div> -->
-            </div>
-            <button class="btn btn-info float-right " type="submit">make an order</button>
+    
+        <button type="submit" class=" btn btn-info float-right"><span *ngIf="!isClicked">Order
+          </span><span *ngIf="isClicked">Waiting....</span></button>
+      </form>
+    </div>
 
-          </form>
-        </div>
-      
-      </div>
+  </div>
 
-      </div>
- 
+</div>
+
 
 
 

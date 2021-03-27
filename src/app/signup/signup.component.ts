@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from "../services/auth.service";
 import { Router } from '@angular/router';
-import  * as mapboxgl from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl';
 
 @Component({
   selector: 'app-signup',
@@ -12,8 +12,10 @@ import  * as mapboxgl from 'mapbox-gl';
 export class SignupComponent implements OnInit {
 
   constructor(private _AuthService: AuthService, private _Router: Router) { }
-
-  
+  isClicked:any=false;
+isMatched:any;
+isEnteredCoordinates:any;
+returnMessage:any;
   //get data from form 
   signupForm = new FormGroup({
     'name': new FormControl(null, [Validators.required, Validators.pattern(/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/)]),
@@ -25,15 +27,21 @@ export class SignupComponent implements OnInit {
     'flat': new FormControl(null, [Validators.required]),
     'floor': new FormControl(null, [Validators.required]),
     'building': new FormControl(null, [Validators.required]),
-    'gender':new FormControl(null,Validators.required),
-    'day':new FormControl(null,[Validators.required, Validators.minLength(1), Validators.maxLength(2),Validators.min(1),Validators.max(31)]),
-    'month':new FormControl(null,[Validators.required, Validators.minLength(1), Validators.maxLength(2),Validators.min(1),Validators.max(12)]),
-    'year':new FormControl(null,[Validators.required, Validators.minLength(4),Validators.maxLength(4),Validators.min(1950),Validators.max(2010)]),
+    'gender': new FormControl(null, Validators.required),
+    'birthdate': new FormControl(null, Validators.required),
   });
 
 
   //signup button 
   signUp() {
+    this.isClicked=true;
+    if (this.signupForm.value.password != this.signupForm.value.confirmPassword) {
+      this.isMatched=true;
+      this.isClicked=false;
+    }
+    else {
+      console.log('matched')
+      this.isMatched=false;
     //data is the json that will send to backend
     let data = {
       name: this.signupForm.value.name,
@@ -41,8 +49,8 @@ export class SignupComponent implements OnInit {
       email: this.signupForm.value.email,
       password: this.signupForm.value.password,
       confirmPassword: this.signupForm.value.confirmPassword,
-      gender:this.signupForm.value.gender,
-      birthDate: this.signupForm.value.year + '-' + this.signupForm.value.month + '-' + this.signupForm.value.day ,
+      gender: this.signupForm.value.gender,
+      birthDate: this.signupForm.value.birthdate,
       //concat address 
       locationAsAddress: this.signupForm.value.locationAsAddress + ' building:' + this.signupForm.value.building + ' floor:' + this.signupForm.value.floor + ' flat:' + this.signupForm.value.flat,
       locationAsCoordinates: {
@@ -51,20 +59,40 @@ export class SignupComponent implements OnInit {
         }
       }
     }
-  
+
     //check if user used map to enter location or not the function return true or false 
     if (this.checklocation(this.latt, this.lng) != false) {
-     // if used map add the user 
+      // if used map add the user 
       this._AuthService.register(data).subscribe(d => {
+        this.isClicked=false;
+
+        if (d.message == 'Success') {
+          this.isEnteredCoordinates=null;
+          this.returnMessage=d.message;
+          this.signupForm.reset();
+        }
         console.log(d)
+        if (d.errors) {
+
+          d.message = 'Enter Valid Data';
+          this.returnMessage=d.message;
+
+
+        }
+        this.returnMessage=d.message;
+        console.log(d.message)
+
       },
         err => {
           console.log(err);
+          this.returnMessage='check the entered data';
+          console.log('check the entered data')
         })
     } else {
-      console.log('enter coordinates')
+      this.isClicked=false;
+     this.isEnteredCoordinates='Enter Coordinates';
     }
-  }
+  }}
   //check if user used map to enter location or not the function return true or false 
   checklocation(ln: any, la: any): any {
     if (ln == undefined || ln == null)
@@ -102,8 +130,8 @@ export class SignupComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-      //calll the map
-     this.map()
+    //calll the map
+    this.map()
   }
 
 }

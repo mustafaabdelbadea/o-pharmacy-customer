@@ -24,9 +24,10 @@ import { GetOneOrderComponent } from './get-one-order/get-one-order.component';
 import { GetOnePharmacyComponent } from './get-one-pharmacy/get-one-pharmacy.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { SearchPharmacyPipe } from './search-pharmacy.pipe';
+import { SearchPharmacyPipe } from './pipe/search-pharmacy.pipe';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchMedicinePipe } from './pipe/search-medicine.pipe';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     SearchPharmacyPipe,
     NavbarComponent,
+    SearchMedicinePipe,
     
   ],
   imports: [

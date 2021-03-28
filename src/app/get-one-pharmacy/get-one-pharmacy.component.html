@@ -1,11 +1,11 @@
 <div class="mainDiv py-3">
   <div  class="py-2 w-100  " >
-    <div class="row m-auto d-flex justify-content-around pt-2 w-75 forpharmacy">
+    <div class="row m-auto d-flex justify-content-around pt-2 w-75 forpharmacy rounded">
       <div class="w-50 d-flex h-25 py-4 my-4 mx-auto" *ngIf="onePharmacyData== null"><img class="notfound" src="../../assets/images/not found/notfousnd.png" alt=""> <span style="font-size: x-large;"> NO PHARMACY WITH THIS ID</span> </div>
       <div *ngIf="onePharmacyData!= null" class=" my-auto col-sm-10 col-md-5 col-lg-5 justify-content-center ">
         <div class="w-100 justify-content-center"> 
-        <img class=" mx-auto " *ngIf="pharmacyLogo== null " src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" class="card-img-top" alt="...">
-        <img class=" mx-auto " *ngIf="pharmacyLogo!= null" src="{{pharmacyLogo}}" class="card-img-top" alt="...">
+        <img class=" img-fluid  rounded-circle center"  *ngIf="pharmacyLogo== null " src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" alt="...">
+        <img class=" img-fluid  rounded-circle center"  *ngIf="pharmacyLogo!= null" src="{{pharmacyLogo}}" alt="...">
         </div>
         <h2 class="my-1 text-center"> {{ pharmacyName }} </h2>
         <div *ngIf="pharmacyRate!= null" class=" mx-auto for-rate" style="font-size: large; font-weight: 600;"> 

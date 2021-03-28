@@ -11,9 +11,9 @@
       <div class="d-flex row justify-content-between w-100 ">
 
           
-        <div *ngIf="globalStatus=='done'" class="col-sm-12 col-md-4 col-lg-4 border-black border rounded my-1 py-3 ">
+        <div  class="col-sm-12 col-md-4 col-lg-4 border-black border rounded my-1 py-3 ">
           <div>
-            <a [routerLink]="['/GetOnePharmacy',pharmacyData._id]">
+            <a *ngIf="globalStatus=='done'" [routerLink]="['/GetOnePharmacy',pharmacyData._id]">
             <div class=" justify-content-between  ">
               <div class="card-header">accepted by:</div>
               <img class="img-fluid img w-50 h-50 center rounded-circle" *ngIf="pharmacyData.logo!=null" src="{{pharmacyData.logo}}" alt="{{pharmacyData.name}} logo">
@@ -40,8 +40,8 @@
                 <div class=" d-flex justify-content-between  ">
                   <div class="col-sm-4 col-md-4 col-lg-4"> 
                     <h6 class=" text-center numberandDate"><strong>Date:</strong> {{orderDate}} <br> <strong>Time:</strong> {{orderTime}}</h6>
-                    <h4 *ngIf="globalStatus=='accepted'" class=" text-center numberandDate">Accepted</h4>
-                    <h4 *ngIf="globalStatus=='notAccepted'" class=" text-center numberandDate">Not Accepted Yet</h4>
+                    <h4 *ngIf="globalStatus=='done'" class=" text-center numberandDate">Done</h4>
+                    <h4 *ngIf="globalStatus=='canceled'" class=" text-center numberandDate">Canceled</h4>
                     <div class="card-body border border-black p-1 mb-3"> <p class="p-0">{{orderByTexting}}</p> </div> 
                     
                     <div class="rate">

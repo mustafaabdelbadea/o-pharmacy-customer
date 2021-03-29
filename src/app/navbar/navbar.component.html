@@ -34,19 +34,21 @@
         </li>
         <div class="dropdown text-center ">
 
-          <img *ngIf='photo' [src]="photo" class="drop-down-img mx-1"
-            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="image">
             
-          <img *ngIf='!photo' src="../../assets/images/navbar/21666259.jpg" class="drop-down-img mx-1 img-fluid"
+          <img *ngIf='!isPhoto' src="../../assets/images/navbar/21666259.jpg" class="drop-down-img mx-1 "
           id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="image">
+          
+          <img *ngIf='isPhoto' [src]="photo" class="drop-down-img mx-1"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="image">
           <div class="d-flex justify-content-center text-center">
             <div class="dropdown-menu p-3  dropdown-menu-right text-center align-items-center"
               aria-labelledby="dropdownMenuButton">
               <li class="py-1">
-                <img *ngIf='photo' [src]="photo" class="drop-down-img"
-                alt="">
-                <img *ngIf='!photo' src="../../assets/images/navbar/21666259.jpg" class="drop-down-img"
+             
+                <img *ngIf='!isPhoto' src="../../assets/images/navbar/21666259.jpg" class="drop-down-img"
                   alt="">
+                  <!-- <img *ngIf='isPhoto' [src]="photo" class="drop-down-img"
+                  alt=""> -->
               </li>
 
               <li class="nav-item py-2">

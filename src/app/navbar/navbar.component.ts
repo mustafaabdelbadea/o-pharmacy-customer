@@ -14,6 +14,7 @@ name:any;
 email:any;
  decoded:any;
  photo:any;
+ isPhoto:any=false;
   constructor() {
     this.isLogged();
 
@@ -28,7 +29,15 @@ email:any;
       this.decoded = jwt_decode(this.token);
       this.name=this.decoded.name;
       this.email=this.decoded.email;
-      this.photo=localStorage.getItem('photo');
+
+      if (localStorage.getItem('photo')!=null||localStorage.getItem('photo')!=undefined) {
+        this.isPhoto=true;
+        this.photo=localStorage.getItem('photo');
+
+      }
+      else{
+        this.isPhoto=false;
+      }
     }
     else{
       this.isLoggedIn=false;
@@ -37,7 +46,7 @@ email:any;
 
   logout(){
     localStorage.removeItem('token');
-    localStorage.removeItem('phtot');
+    localStorage.removeItem('photo');
     window.location.reload();
   
   }

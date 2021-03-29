@@ -27,8 +27,10 @@ export class SigninComponent implements OnInit {
       if (data.message == 'success') {
         this.isClicked=false;
         localStorage.setItem('token', data.token);
-        localStorage.setItem('photo', data.photo);
-
+        if(data.photo!=null||data.photo!=undefined){
+          localStorage.setItem('photo', data.photo);
+        }
+     
         //console.log('test',data.photo)
          window.location.reload();
       }

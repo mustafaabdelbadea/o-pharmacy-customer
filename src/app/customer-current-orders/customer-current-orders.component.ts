@@ -53,7 +53,7 @@ export class CustomerCurrentOrdersComponent implements OnInit {
   err => {
     console.log(err);
   } )
-  }, 1000);
+  }, 3000);
 
    }
 

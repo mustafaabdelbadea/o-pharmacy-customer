@@ -54,22 +54,22 @@ export class GetOneOrderComponent implements OnInit {
         console.log(error) ;
     })}
 
-    map() {
-      console.log(this.lng,this.latt)
-      const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';
-      var map = new mapboxgl.Map({
-        accessToken,
-        container: 'map', // container id
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [this.lng, this.latt], // starting position
-        zoom: 10,// starting zoom
-        trackResize: true
-      });
-      var marker1 = new mapboxgl.Marker()
-          .setLngLat([this.lng,this.latt])
-          .addTo(map);
+    // map() {
+    //   console.log(this.lng,this.latt)
+    //   const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';
+    //   var map = new mapboxgl.Map({
+    //     accessToken,
+    //     container: 'map', // container id
+    //     style: 'mapbox://styles/mapbox/streets-v11',
+    //     center: [this.lng, this.latt], // starting position
+    //     zoom: 10,// starting zoom
+    //     trackResize: true
+    //   });
+    //   var marker1 = new mapboxgl.Marker()
+    //       .setLngLat([this.lng,this.latt])
+    //       .addTo(map);
   
-    }    
+    // }    
 
 
 ngOnInit(): void {

@@ -38,8 +38,7 @@ export class CustomerCurrentOrdersComponent implements OnInit {
       this.orderDate=this.currentOrderData.date.substring(0,10);
       this.orderTime=this.currentOrderData.date.substring(11,19);
       console.log(data);
-      if(this.currentOrderData.globalStatus=='notAccepted')
-      {this.api(_CustomerCurrentOrdersService);}
+      this.api(_CustomerCurrentOrdersService);
     }
     else if (data.message="no order founds") {
       this.currentOrderData=null;   

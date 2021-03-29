@@ -32,6 +32,13 @@ export class GetOneOrderComponent implements OnInit {
         if (data.message=='success') {
           this.oneOrderData=data.orderData;
           this.pharmacyData=data.pharmacyData   ;
+          this.lng=this.pharmacyData.locationAsCoordinates.coordinates.lon;
+          this.latt=this.pharmacyData.locationAsCoordinates.coordinates.lat;
+          this.orderDate=this.oneOrderData.date.substring(0,10);
+          this.orderTime=this.oneOrderData.date.substring(11,19);
+          this.globalStatus=this.oneOrderData.globalStatus;
+          this.orderByTexting=this.oneOrderData.orderByTexting;
+          this.orderByPhoto=this.oneOrderData.orderByPhoto;
                  console.log(data);
         }
         else if (data.message="no order founds") {
@@ -40,14 +47,7 @@ export class GetOneOrderComponent implements OnInit {
           console.log(this.oneOrderData);
           console.log(data);
         }
-      
-        this.lng=this.pharmacyData.locationAsCoordinates.coordinates.lon;
-        this.latt=this.pharmacyData.locationAsCoordinates.coordinates.lat;
-        this.orderDate=this.oneOrderData.date.substring(0,10);
-        this.orderTime=this.oneOrderData.date.substring(11,19);
-        this.globalStatus=this.oneOrderData.globalStatus;
-        this.orderByTexting=this.oneOrderData.orderByTexting;
-        this.orderByPhoto=this.oneOrderData.orderByPhoto;
+
         //this.map();
       },
 (error)=>{

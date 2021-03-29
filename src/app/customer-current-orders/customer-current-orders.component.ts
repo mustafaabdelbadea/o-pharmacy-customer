@@ -33,6 +33,10 @@ export class CustomerCurrentOrdersComponent implements OnInit {
     if (data.message=='success') {
       this.currentOrderData=data.customerOrders[0];
       this.pharmacyData=data.pharmacyData;
+      this.lng=this.pharmacyData.locationAsCoordinates.coordinates.lon;
+      this.latt=this.pharmacyData.locationAsCoordinates.coordinates.lat;
+      this.orderDate=this.currentOrderData.date.substring(0,10);
+      this.orderTime=this.currentOrderData.date.substring(11,19);
       console.log(data);
       if(this.currentOrderData.globalStatus=='notAccepted')
       {this.api(_CustomerCurrentOrdersService);}
@@ -44,10 +48,7 @@ export class CustomerCurrentOrdersComponent implements OnInit {
       console.log(data);
     }
   
-    this.lng=this.pharmacyData.locationAsCoordinates.coordinates.lon;
-    this.latt=this.pharmacyData.locationAsCoordinates.coordinates.lat;
-    this.orderDate=this.currentOrderData.date.substring(0,10);
-    this.orderTime=this.currentOrderData.date.substring(11,19);
+   
   //  this.map();
   },
   err => {

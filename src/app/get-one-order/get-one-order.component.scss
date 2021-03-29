@@ -5,7 +5,10 @@
 }
 
 .mainDiv
-{background-color: #E8F4F6;}
+{
+ // background-color: #E8F4F6;
+  min-height: 66vh;
+}
 
 a:link,a:visited, a:hover,a:active {
   text-decoration: none;

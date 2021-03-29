@@ -1,3 +1,4 @@
+<div class="mainDiv">
 <div class="container">
     <div *ngIf="oneOrderData==null">
       <div class="col-md-12 text-center">
@@ -11,7 +12,7 @@
       <div class="d-flex row justify-content-between w-100 ">
 
           
-        <div  class="col-sm-12 col-md-4 col-lg-4 border-black border rounded my-1 py-3 ">
+        <div  class="col-sm-12 col-md-3 col-lg-3 border-black border rounded my-auto mr-1 py-3 ">
           <div>
             <a *ngIf="globalStatus=='done'" [routerLink]="['/GetOnePharmacy',pharmacyData._id]">
             <div class=" justify-content-between  ">
@@ -19,13 +20,13 @@
               <img class="img-fluid img w-50 h-50 center rounded-circle" *ngIf="pharmacyData.logo!=null" src="{{pharmacyData.logo}}" alt="{{pharmacyData.name}} logo">
               <img class="img-fluid img w-50 h-50 center rounded-circle" *ngIf="pharmacyData.logo==null" src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" alt="{{pharmacyData.name}} logo">
               <h3 class="mx-1 text-center numberandDate">{{pharmacyData.name}}</h3>
-              <h4 class="mx-1 text-center numberandDate">{{pharmacyData.phones}}</h4> 
+              <div *ngFor="let phone of pharmacyData.phones ; index as i;" ><h4 class="mx-1 text-center numberandDate">{{phone}}</h4></div>
               <h4 class="mx-1 text-center numberandDate">{{pharmacyData.locationAsAddress}}</h4>
               <!-- <div id="map" class="bg-dark center" style="width: 25rem; height: 25rem;"></div> -->
             </div> 
             </a>
 
-            <div *ngIf="globalStatus=='canceled'" class=" justify-content-center text-center  ">
+            <div *ngIf="globalStatus=='canceled'" class=" justify-content-center text-center my-auto  ">
               
               <h5 class="pt-2 my-auto mx-auto">this Order Was canceled</h5>
               
@@ -35,7 +36,7 @@
         
         </div>
 
-        <div class=" col-sm-12 col-md-8 col-lg-8 border-black border rounded my-1 py-3">
+        <div class=" col-sm-12 col-md-8 col-lg-8 border-black border rounded mt-5 py-3">
                 <div class="card-header">Order Details:</div> 
                 <div class=" d-flex justify-content-between  ">
                   <div class="col-sm-4 col-md-4 col-lg-4"> 
@@ -74,3 +75,4 @@
       
     
     </div>
+  </div>

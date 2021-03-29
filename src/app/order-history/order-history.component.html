@@ -6,7 +6,7 @@
     </div>
 
   </div>
-  <div *ngIf='allOrdersData!=null'>
+  <div *ngIf='allOrdersData!=null' class="orderMinH">
     <div class="ordersFound my-5">
       <div *ngFor='let oneOrder of allOrdersData ; index as i;'>
         <a  [routerLink]="['/getOneOrder',oneOrder._id]">

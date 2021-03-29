@@ -21,8 +21,11 @@ export class CustomerCurrentOrdersComponent implements OnInit {
 
 
   constructor(private _CustomerCurrentOrdersService:CustomerCurrentOrdersService) {
-    setTimeout(() => {
+    this.api(_CustomerCurrentOrdersService)
+ }
 
+
+ api(_CustomerCurrentOrdersService:CustomerCurrentOrdersService) { setTimeout(() => {
   console.log("ay haga");
   _CustomerCurrentOrdersService.currentOrder().subscribe( (data)=>{
         
@@ -31,6 +34,8 @@ export class CustomerCurrentOrdersComponent implements OnInit {
       this.currentOrderData=data.customerOrders[0];
       this.pharmacyData=data.pharmacyData;
       console.log(data);
+      if(this.currentOrderData.globalStatus=='notAccepted')
+      {this.api(_CustomerCurrentOrdersService);}
     }
     else if (data.message="no order founds") {
       this.currentOrderData=null;   
@@ -48,26 +53,26 @@ export class CustomerCurrentOrdersComponent implements OnInit {
   err => {
     console.log(err);
   } )
-  }, 2000);
+  }, 1000);
 
    }
 
-   map() {
-    console.log(this.lng,this.latt)
-    const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';
-    var map = new mapboxgl.Map({
-      accessToken,
-      container: 'map', // container id
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.lng, this.latt], // starting position
-      zoom: 10,// starting zoom
-      trackResize: true
-    });
-    var marker1 = new mapboxgl.Marker()
-        .setLngLat([this.lng,this.latt])
-        .addTo(map);
+  //  map() {
+  //   console.log(this.lng,this.latt)
+  //   const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';
+  //   var map = new mapboxgl.Map({
+  //     accessToken,
+  //     container: 'map', // container id
+  //     style: 'mapbox://styles/mapbox/streets-v11',
+  //     center: [this.lng, this.latt], // starting position
+  //     zoom: 10,// starting zoom
+  //     trackResize: true
+  //   });
+  //   var marker1 = new mapboxgl.Marker()
+  //       .setLngLat([this.lng,this.latt])
+  //       .addTo(map);
 
-  }   
+  // }   
 
   ngOnInit(): void {
    

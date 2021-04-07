@@ -57,6 +57,21 @@ export class CustomerCurrentOrdersComponent implements OnInit {
 
    }
 
+   cancel()
+   {
+     this._CustomerCurrentOrdersService.cancelOrder(this.currentOrderData._id).subscribe(d => {
+       console.log(d)
+       console.log('canceled')
+
+       //window.location.reload();
+     },
+       err => {
+         console.log(err);
+       })
+ 
+   }
+ 
+
   //  map() {
   //   console.log(this.lng,this.latt)
   //   const accessToken = 'pk.eyJ1IjoibXVzdGFmYWFiZGVsYmFkZWEiLCJhIjoiY2tpbHcwNmg2MG0wNjJ2cDlxbXI2NGZxbSJ9.h5Kephiwr11YMCfLXs14FQ';

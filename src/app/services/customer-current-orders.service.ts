@@ -23,6 +23,11 @@ export class CustomerCurrentOrdersService {
   {
     return this._HttpClient.get(this.baseUrl+"customerCurrentOrders",this.httpOptions)
 }
+
+cancelOrder(orderId:any):Observable<any>
+{
+  return this._HttpClient.post(this.baseUrl+"cancel",{orderId},this.httpOptions)
+}
   }
 
 

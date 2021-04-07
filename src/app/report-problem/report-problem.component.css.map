@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACAA,+EAA+E;AAC/E,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,0CAA0C;;;AAEnD,UAAU;EACN,WAAW,EAAE,aAAa;EAC1B,GAAG,EAAE,wCAAwC;;;AAIjD,AAAA,IAAI,CAAA;EACA,WAAW,EAFC,eAAe;CAG9B;;AAMD,AAAA,KAAK,CAAC;EACF,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,SAAS;EAClB,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,cAAc;EACtB,kBAAkB,EAAE,IAAI;EACxB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,KAAK,AAAA,MAAM,CAAC;EACV,MAAM,EAAE,iBAAiB;CAC1B;;AD9BH,AAAA,UAAU,CAAA;EACN,KAAK,ECYE,OAAO;CDXjB",
     "sources": [
-        "report-problem.component.scss"
+        "report-problem.component.scss",
+        "../../styles.scss"
     ],
     "names": [],
     "file": "report-problem.component.css"

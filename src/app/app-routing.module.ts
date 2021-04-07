@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'signup',canActivate:[AuthLoginGuard], component: SignupComponent },
     //{ path: 'signin',canActivate:[AuthLoginGuard] , component: SigninComponent },
   //{ path: 'signup', canActivate:[AuthLoginGuard],component: SignupComponent },
-  {path:'reportProblem',component:ReportProblemComponent},
+  {path:'reportProblem',canActivate:[AuthGuard,VerifyGuard],component:ReportProblemComponent},
   //{path:'healthNews',component:HealthNewsComponent},
 //check if logged in and email verified 
 {path:'home',component:HomeComponent},

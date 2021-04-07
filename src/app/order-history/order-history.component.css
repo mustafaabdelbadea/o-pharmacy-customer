@@ -45,4 +45,8 @@ a:link, a:visited, a:hover, a:active {
 .numberandDate {
   color: #707070;
 }
+
+.orderMinH {
+  min-height: 57vh;
+}
 /*# sourceMappingURL=order-history.component.css.map */

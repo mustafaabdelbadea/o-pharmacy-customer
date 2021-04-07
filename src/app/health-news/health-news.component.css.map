@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACL,gBAAgB,EAAE,OAAO;CAC3B;;AAED,AAAA,CAAC,AAAA,KAAK,EAAC,CAAC,AAAA,QAAQ,EAAC,CAAC,AAAA,OAAO,CAAC;EACtB,eAAe,EAAE,IAAI;CACtB;;AACD,AAAA,CAAC,CAAA;EACG,KAAK,EAAE,OAAkB;CAC5B;;AACD,AAAA,CAAC,AAAA,MAAM,CAAA;EACL,KAAK,EAAC,IAAI;CACb",
     "sources": [
         "health-news.component.scss"
     ],

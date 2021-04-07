@@ -1,21 +1,40 @@
 
-<div class="w-50 m-auto mt-5  loginsc align-self-center">
-    <h1 class="text-center pt-3 ">Report problem </h1>
-  <form [formGroup]='reoportForm' class="w-100 container m-auto py-5" (ngSubmit)='report()'>
-        <div class="form-group">
-          <label class='label-color'for="">problem</label>
-
-          <textarea class="form-control" formControlName='problem' aria-label="With textarea"></textarea>
-
-          
-          <div *ngIf="reoportForm.controls.problem.invalid&&reoportForm.controls.problem.touched "  class="alert alert-danger mt-2"> report</div>
+    <div class="mainDiv">
+      <div class="container border-secondary shadow-lg  bg-white rounded py-3 my-3 ">
+        <div class="headerText my-5 text-center">
+          <h1>Need Help ?</h1>
+          <h2>We Are Here For You !</h2>
         </div>
-   
-        <button [disabled]='reoportForm.invalid' class="btn btn-primary float-right " type="submit">Report</button>
         
-  </form>
-  </div>
-  
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../../assets/images/report problem/Contact us.gif" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-6 py-5">
+            <div class="bodytext py-3">
+              <h3 class="text-info">Just Ask.</h3>
+            <h3 class="text-info">Get Answers.</h3>
+            <p class="pt-5 pBodyText">
+              Your questions and comments are important to us. <br>
+              Email us with any questions . <br> We would be happy to answer your questions and set up a meeting with you.
 
-
-   
+            </p>
+            <form [formGroup]='reoportForm' class="w-100 container m-auto " (ngSubmit)='report()'>
+              <div class="form-group">      
+                <textarea class="form-control" formControlName='problem' rows="5" aria-label="With textarea"></textarea>
+      
+                
+                <div *ngIf="reoportForm.controls.problem.invalid&&reoportForm.controls.problem.touched "  class="alert alert-danger "> report</div>
+              </div>
+              <div *ngIf='message' class="alert alert-info" role="alert">
+                {{message}}
+              </div>
+              <button [disabled]='reoportForm.invalid' class="btn btn-info float-right w-25 " type="submit"><span *ngIf="!isClicked">Send</span><span *ngIf="isClicked">Sending....</span></button>
+             
+        </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>

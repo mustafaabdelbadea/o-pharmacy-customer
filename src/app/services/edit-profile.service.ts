@@ -45,4 +45,9 @@ export class EditProfileService {
     return this._HttpClient.post(this.baseUrl + "editCustomerCoordinates",{ lat , lon},this.httpOptions);
   }
 
+  editCustomerPhoto(photo:any):Observable<any>
+  {
+    return this._HttpClient.post(this.baseUrl + "editCustomerPhoto",{photo},this.httpOptions);
+
+  }
 }

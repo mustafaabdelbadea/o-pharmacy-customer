@@ -1,8 +1,7 @@
-<div class="mainDiv py-1" >
+<!-- <div class="mainDiv py-1" >
 
 
 <div class="p-1 my-1  mx-auto w-75 mainCard" >
-  <!--d-flex justify-content-around row col-sm-10 col-md-5 col-lg-3 -->
   <div class="text-center mt-1 "> <h3 style="color: #000;" >profile </h3> </div>
 
   <div class="row p-3">
@@ -40,193 +39,300 @@
 
 
 </div>
+</div> -->
+
+<div class="mainDiv my-5">
+  <div class="container ">
+    <div class="row m-auto">
+      <div class="col-md-3 mx-4 border-secondary shadow-lg  bg-white rounded  py-5">
+        <div class="text-center">
+          <div class="imgContainer">
+            <img class="mx-auto rounded-circle image img-fluid" *ngIf='photo' [src]="photo" alt="">
+
+            <img class="mx-auto rounded-circle image img-fluid" *ngIf='!photo'
+              src="../../assets/images/navbar/21666259.jpg" alt="">
+            <div class="uploadBtn">
+              <input id="file-input" type='file' class="d-none" (change)="onSelectFile($event)">
+              <label for="file-input">
+                <i class=" tablets far fa-image  fa-4x p-3"></i> <br>
+                Upload Image
+              </label>
+            </div>
+          </div>
+
+          <h4 class="my-3">{{name}}</h4>
+          <h5 class="my-3">{{email}}</h5>
+
+          <button class="btn btn-info mx-1" (click)="editPhoto()">
+            Save Changes
+          </button>
+          <button class="btn btn-danger" (click)="cancelCahnge()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="col-md-8  border-secondary shadow-lg  bg-white rounded py-5">
+        <h3>General Account Settings</h3>
+        <hr>
+        <div class="mx-2">
+          <div class="d-flex justify-content-between">
+            <h5>Name : </h5>
+            <h5>{{name}}</h5>
+            <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editName"><i
+                  class="far fa-edit"></i> Edit Name</a>
+            </h5>
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5>Phone : </h5>
+            <h5>{{phone}}</h5>
+            <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editPhone"><i
+                  class="far fa-edit"></i> Edit Phone</a>
+            </h5>
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5>Password </h5>
+            <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editPass"><i
+                  class="far fa-edit"></i> Edit Password</a>
+            </h5>
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5>Address : </h5>
+            <h5>{{address}}</h5>
+
+            <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editAddress"><i
+                  class="far fa-edit"></i> Edit Address</a>
+            </h5>
+
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <h5>Location on map </h5>
+
+            <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editLocation"><i
+                  class="far fa-edit"></i> Edit Location</a>
+            </h5>
+
+          </div>
+          <!-- <div id="map" class=" form-control m-auto mapInfo"></div> -->
+
+       
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-
-
-<div class="modal fade" id="editName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">edit name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="w-100 mx-auto border oneEdit" >
+        <div class="w-100 mx-auto border oneEdit">
           <form [formGroup]='editNameForm' class=" w-75 container m-2 mx-auto py-2 text-center" (ngSubmit)='editName()'>
-          <div class="form-group">
-            <div class=" d-flex mb-3 mx-auto ">
-            <label class='label-color  text-lg-left mx-2 '>Name</label>
-        
-            <input formControlName='name' type="text" class="form-control w-75 mx-2">
-          
-          </div>
-          <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched " class="alert alert-danger mt-2 ">  name not vaild</div>
-          <div class="modal-footer">
-          <button [disabled]='editNameForm.invalid' class="btn w-auto m-auto" type="submit">Edit Name</button>
-          <button type="button" class="btn bg-danger w-auto m-auto" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-        
-        </form>
+            <div class="form-group">
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color  text-lg-left mx-2 '>Name</label>
+
+                <input formControlName='name' type="text" class="form-control w-75 mx-2">
+
+              </div>
+              <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched "
+                class="alert alert-danger mt-2 "> Name Not Vaild</div>
+              <div class="modal-footer">
+                <button [disabled]='editNameForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
+                  Name</button>
+                <button type="button" class="btn btn-danger w-auto m-auto" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="editPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">edit password</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="w-100 mx-auto border oneEdit" >
+        <div class="w-100 mx-auto border oneEdit">
 
           <form [formGroup]='editPassForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPass()'>
-          <div class="form-group">
-            <div class=" d-flex mb-3 mx-auto ">
-            <label class='label-color  text-lg-left'for="">old password</label>
-            <input formControlName='oldPassword' type="password" class="form-control w-75 m-auto">
-            </div>
-            <div *ngIf="editPassForm.controls.oldPassword.invalid&&editPassForm.controls.oldPassword.touched " class="alert alert-danger mt-2">  old password not vaild</div>  
-            <div class=" d-flex mb-3 mx-auto ">
-            <label class='label-color  text-lg-left'for="">new password</label>
-            <input formControlName='password' type="password" class="form-control w-75 m-auto">
-            </div>
-            <div *ngIf="editPassForm.controls.password.invalid&&editPassForm.controls.password.touched " class="alert alert-danger mt-2">  new password not vaild</div>
-            <div class=" d-flex mb-3 mx-auto ">
-            <label class='label-color  text-lg-left '>confirm password</label>
-            <input formControlName='confirmPassword' type="password" class="form-control w-75 m-auto">
-            </div>
-            <div *ngIf="passwordNotMatch()&&editPassForm.controls.confirmPassword.touched " class="alert alert-danger mt-2">  confirm password not match</div> 
-          
-          </div>
+            <div class="form-group">
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color  text-lg-left' for="">Old Password</label>
+                <input formControlName='oldPassword' type="password" class="form-control w-75 m-auto">
+              </div>
+              <div *ngIf="editPassForm.controls.oldPassword.invalid&&editPassForm.controls.oldPassword.touched "
+                class="alert alert-danger mt-2"> Old Password Not Vaild</div>
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color  text-lg-left' for="">New Password</label>
+                <input formControlName='password' type="password" class="form-control w-75 m-auto">
+              </div>
+              <div *ngIf="editPassForm.controls.password.invalid&&editPassForm.controls.password.touched "
+                class="alert alert-danger mt-2"> New Password Not Vaild</div>
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color  text-lg-left '>Confirm Password</label>
+                <input formControlName='confirmPassword' type="password" class="form-control w-75 m-auto">
+              </div>
+              <div *ngIf="passwordNotMatch()&&editPassForm.controls.confirmPassword.touched "
+                class="alert alert-danger mt-2"> Confirm Password Not Mtch</div>
 
-          <div class="modal-footer">
-          <button [disabled]='editPassForm.invalid' class="btn w-auto m-auto" type="submit">Edit Password</button>
-          <button type="button" class="btn bg-danger w-auto m-auto" data-dismiss="modal">Close</button>
-          </div>
+            </div>
+
+            <div class="modal-footer">
+              <button [disabled]='editPassForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
+                Password</button>
+              <button type="button" class="btn btn-danger w-auto m-auto" data-dismiss="modal">Close</button>
+            </div>
           </form>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="editPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editPhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">edit phone</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Phone</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="w-100 mx-auto border oneEdit" >
+        <div class="w-100 mx-auto border oneEdit">
           <form [formGroup]='editPhonesForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editPhones()'>
-          <div class="form-group ">
-            <div class=" d-flex mb-3 mx-auto ">
-            <label class='label-color'>phone</label>
-            <input formControlName='phones' type="text" class="form-control w-75 m-auto">
-          </div>
-            <div  class="alert alert-primary w-100 mt-2"> this delete your phone and insert new one</div>
-            <div *ngIf="editPhonesForm.controls.phones.invalid&&editPhonesForm.controls.phones.touched " class="alert alert-danger mt-2">  number not vaild</div>
-          </div>          
+            <div class="form-group ">
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color'>Phone</label>
+                <input formControlName='phones' type="text" class="form-control w-75 m-auto">
+              </div>
+              <div class="alert alert-primary w-100 mt-2"> This delete your phone and insert new one</div>
+              <div *ngIf="editPhonesForm.controls.phones.invalid&&editPhonesForm.controls.phones.touched "
+                class="alert alert-danger mt-2"> Number Not Vaild</div>
+            </div>
 
-          <div class="modal-footer">
-            <button [disabled]='editPhonesForm.invalid' class="btn w-auto m-auto" type="submit">edit phones</button>
-          <button type="button" class="btn bg-danger w-auto m-auto" data-dismiss="modal">Close</button>
-          </div>
+            <div class="modal-footer">
+              <button [disabled]='editPhonesForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
+                Phone</button>
+              <button type="button" class="btn btn-danger w-auto m-auto" data-dismiss="modal">Close</button>
+            </div>
           </form>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="editAddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editAddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">edit address</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body"><div class="w-100 mx-auto border oneEdit" >
-        <form [formGroup]='editAddressForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editAddress()'>
-        <div class="form-group">
-          <div class=" d-flex mb-3 mx-auto ">
-          <label class='label-color mx-2 text-lg-left'for="">flat</label>
-          <input formControlName='flat' type="text" class="form-control w-25 m-auto">
-         
-          <label class='label-color mx-2 text-lg-left'for="">floor</label>
-          <input formControlName='floor' type="text" class="form-control w-25 m-auto">
-        
-          <label class='label-color mx-2 text-lg-left'for="">building</label>
-          <input formControlName='building' type="text" class="form-control w-25 m-auto">
-        </div>
-        
-        <div *ngIf="editAddressForm.controls.flat.invalid&&editAddressForm.controls.flat.touched " class="alert alert-danger mt-2">  flat not vaild</div>
-          <div *ngIf="editAddressForm.controls.floor.invalid&&editAddressForm.controls.floor.touched " class="alert alert-danger mt-2">  floor not vaild</div>
-          <div *ngIf="editAddressForm.controls.building.invalid&&editAddressForm.controls.building.touched " class="alert alert-danger mt-2">  building not vaild</div>  
-        
-          <div class=" d-flex my-3 mx-auto ">
-          <label class='label-color mx-2 text-lg-left'for="">Address</label>
-          <input formControlName='locationAsAddress' type="text" class="form-control w-75 m-auto">
-        </div>
-        <div *ngIf="editAddressForm.controls.locationAsAddress.invalid&&editAddressForm.controls.locationAsAddress.touched " class="alert alert-danger mt-2">locationAsAddress not vaild</div>
-        
-        </div>
-        
-
-          <div class="modal-footer">
-          <button [disabled]='editAddressForm.invalid' class="btn w-auto m-auto" type="submit">Edit Address</button>
-          <button type="button" class="btn bg-danger w-auto m-auto" data-dismiss="modal">Close</button>
-          </div>
-          </form>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="editLocation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">edit your location</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Address</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="w-100 mx-auto border oneEdit" >
+        <div class="w-100 mx-auto border oneEdit">
+          <form [formGroup]='editAddressForm' class="w-75 container m-auto pb-5 text-center" (ngSubmit)='editAddress()'>
+            <div class="form-group">
+              <div class=" d-flex mb-3 mx-auto ">
+                <label class='label-color mx-2 text-lg-left' for="">Flat</label>
+                <input formControlName='flat' type="text" class="form-control w-25 m-auto">
+
+                <label class='label-color mx-2 text-lg-left' for="">Floor</label>
+                <input formControlName='floor' type="text" class="form-control w-25 m-auto">
+
+                <label class='label-color mx-2 text-lg-left' for="">Building</label>
+                <input formControlName='building' type="text" class="form-control w-25 m-auto">
+              </div>
+
+              <div *ngIf="editAddressForm.controls.flat.invalid&&editAddressForm.controls.flat.touched "
+                class="alert alert-danger mt-2"> Flat not vaild</div>
+              <div *ngIf="editAddressForm.controls.floor.invalid&&editAddressForm.controls.floor.touched "
+                class="alert alert-danger mt-2"> Floor not vaild</div>
+              <div *ngIf="editAddressForm.controls.building.invalid&&editAddressForm.controls.building.touched "
+                class="alert alert-danger mt-2"> Building not vaild</div>
+
+              <div class=" d-flex my-3 mx-auto ">
+                <label class='label-color mx-2 text-lg-left' for="">Address</label>
+                <input formControlName='locationAsAddress' type="text" class="form-control w-75 m-auto">
+              </div>
+              <div
+                *ngIf="editAddressForm.controls.locationAsAddress.invalid&&editAddressForm.controls.locationAsAddress.touched "
+                class="alert alert-danger mt-2">locationAsAddress not vaild</div>
+
+            </div>
+
+
+            <div class="modal-footer">
+              <button [disabled]='editAddressForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
+                Address</button>
+              <button type="button" class="btn btn-danger w-auto m-auto" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editLocation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit your location</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="w-100 mx-auto border oneEdit">
 
           <form class="w-100 container m-auto pb-5 text-center" (ngSubmit)='editCoordinates()'>
-          
+
             <div class="form-group w-100 m-auto ">
               <div id="map" class=" form-control m-auto map"></div>
-          </div>
-          <div  class="alert alert-primary w-100 mt-2">press on location selector on the map then press edit </div>
-          
-        
+            </div>
+            <div class="alert alert-primary w-100 mt-2">Press on location selector on the map then press edit </div>
 
-          <div class="modal-footer">
-            <button [disabled]='checkNolocation()' class="btn w-auto m-auto " type="submit">Edit location</button>
-            <button type="button" class="btn bg-danger w-auto m-auto" data-dismiss="modal">Close</button>
-          </div>
+
+
+            <div class="modal-footer">
+              <button [disabled]='checkNolocation()' class="btn btn-info w-auto m-auto " type="submit">Edit
+                location</button>
+              <button type="button" class="btn btn-danger w-auto m-auto" data-dismiss="modal">Close</button>
+            </div>
 
           </form>
-          </div>
+        </div>
       </div>
     </div>
   </div>

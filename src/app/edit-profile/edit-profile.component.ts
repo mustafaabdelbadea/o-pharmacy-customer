@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import {EditProfileService} from '../services/edit-profile.service'
 import * as mapboxgl from 'mapbox-gl';
+import jwt_decode from 'jwt-decode';
 
 
 @Component({
@@ -10,7 +11,15 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
-
+  token:any=localStorage.getItem('token');
+  name:any;
+  email:any;
+   decoded:any;
+   photo:any;
+   phone:any;
+address:any;
+coordinatesLon:any;
+coordinatesLat:any;
   editNameForm = new FormGroup({
     'name': new FormControl(null, [Validators.required, Validators.pattern(/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/)])
     });
@@ -113,7 +122,7 @@ export class EditProfileComponent implements OnInit {
       accessToken,
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [30.013056, 31.208853], // starting position
+      center: [ this.coordinatesLon,this.coordinatesLat], // starting position
       zoom: 9,// starting zoom
       trackResize: true
     });
@@ -125,8 +134,13 @@ export class EditProfileComponent implements OnInit {
       trackUserLocation: true
  
     });
+    var marker1 = new mapboxgl.Marker()
+    .setLngLat([this.coordinatesLon,this.coordinatesLat])
+    .addTo(map);
+
     map.addControl(geolocate);
     geolocate.on('geolocate', (e: any) => {
+      marker1.remove();
       this.lng = e.coords.longitude;
       this.latt = e.coords.latitude
       var position = [this.lng, this.latt];
@@ -134,6 +148,7 @@ export class EditProfileComponent implements OnInit {
       return position;
  
     });
+
   }
  
   checkNolocation(): any {
@@ -154,9 +169,86 @@ export class EditProfileComponent implements OnInit {
       })
  }
   
-  constructor(private _EditProfileService :EditProfileService) { }
+  constructor(private _EditProfileService :EditProfileService) { 
+   this.isLogged();
+  }
 
+isLogged(){
+    if(this.token){
+      this.decoded = jwt_decode(this.token);
+      this.name=this.decoded.name;
+      this.email=this.decoded.email;
+      this.phone=this.decoded.phone;
+      this.address=this.decoded.locationAsAddress;
+      this.coordinatesLat=this.decoded.locationAsCoordinates.coordinates.lat
+      this.coordinatesLon=this.decoded.locationAsCoordinates.coordinates.lon
 
+      if (localStorage.getItem('photo')!=null||localStorage.getItem('photo')!=undefined) {
+        this.photo=localStorage.getItem('photo');
+      }
+    }
+  }
+
+  fileTypes: any = [
+    'image/jpeg',
+    'image/pjpeg',
+    'image/png'
+  ]
+  validFileType(file: any) {
+    for (var i = 0; i < this.fileTypes.length; i++) {
+      if (file.type === this.fileTypes[i]) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+  url: any;
+  onSelectFile(event: any) { // called each time file input changes
+    if (event.target.files && event.target.files[0]) {
+      console.log(event.target.files[0].type)
+      if (this.validFileType(event.target.files[0])) {
+        var reader = new FileReader();
+
+        reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+        reader.onload = (event: any) => { // called once readAsDataURL is completed
+          this.url = event.target.result;
+          this.photo=this.url;
+          console.log(this.url)
+        }
+      }
+      else {
+        console.log('upload image !!');
+        //if not image make url = not found 
+      //  this.url = this.baseUrl;
+      }
+    }
+  }
+  editPhoto()
+  {
+    if(this.url!=null){
+
+    };
+    
+    this._EditProfileService.editCustomerPhoto(this.url).subscribe(d => {
+      console.log(d)
+    },
+      err => {
+        console.log(err);
+      })
+
+  
+  }
+  cancelCahnge(){
+    if (localStorage.getItem('photo')!=null||localStorage.getItem('photo')!=undefined) {
+      this.photo=localStorage.getItem('photo');
+    }
+
+    else{
+      this.photo=null
+    }
+  }
   ngOnInit(): void {
     this.map()
   }

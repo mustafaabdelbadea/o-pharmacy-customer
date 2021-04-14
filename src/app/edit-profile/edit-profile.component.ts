@@ -20,6 +20,12 @@ export class EditProfileComponent implements OnInit {
 address:any;
 coordinatesLon:any;
 coordinatesLat:any;
+nameMessage:any;
+phoneMessage:any;
+addressMessage:any;
+locationMessage:any;
+passwordMessage:any;
+photoMessage:any;
   editNameForm = new FormGroup({
     'name': new FormControl(null, [Validators.required, Validators.pattern(/[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,20}$/)])
     });
@@ -30,6 +36,7 @@ coordinatesLat:any;
     console.log(name);
     
     this._EditProfileService.editName(name).subscribe(d => {
+      this.nameMessage=d.message;
       console.log(d)
     },
       err => {
@@ -60,6 +67,7 @@ coordinatesLat:any;
         let confirmpassword = this.editPassForm.value.confirmPassword;
                 
     this._EditProfileService.editPassword(oldpassword,password,confirmpassword).subscribe(d => {
+      this.passwordMessage=d.message;
       console.log(d)
     },
       err => {
@@ -71,7 +79,7 @@ coordinatesLat:any;
 
 
   editPhonesForm = new FormGroup({
-    'phones': new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(12)])
+    'phones': new FormControl(null, [Validators.required, Validators.pattern(/^(201)[0-9]{9}/),Validators.maxLength(12)])
       });
  
     editPhones()
@@ -82,6 +90,7 @@ coordinatesLat:any;
     console.log(phones);
     
     this._EditProfileService.editPhones(phones).subscribe(d => {
+      this.phoneMessage=d.message;
       console.log(d)
     },
       err => {
@@ -104,6 +113,8 @@ coordinatesLat:any;
     let address = this.editAddressForm.value.locationAsAddress + ' building:' + this.editAddressForm.value.building + ' floor:' + this.editAddressForm.value.floor + ' flat:' + this.editAddressForm.value.flat;
     
     this._EditProfileService.editAddress(address).subscribe(d => {
+      this.addressMessage=d.message;
+
       console.log(d)
     },
       err => {
@@ -162,6 +173,8 @@ coordinatesLat:any;
    let lon = this.lng;
      
     this._EditProfileService.editCoordinates(lat,lon).subscribe(d => {
+      this.locationMessage=d.message;
+
       console.log(d)
     },
       err => {
@@ -232,6 +245,7 @@ isLogged(){
     };
     
     this._EditProfileService.editCustomerPhoto(this.url).subscribe(d => {
+      this.photoMessage=d.message;
       console.log(d)
     },
       err => {

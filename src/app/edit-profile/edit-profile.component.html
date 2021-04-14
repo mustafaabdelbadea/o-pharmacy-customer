@@ -69,6 +69,9 @@
           <button class="btn btn-danger" (click)="cancelCahnge()">
             Cancel
           </button>
+          <div class="alert alert-info my-2" *ngIf='photoMessage' role="alert">
+            {{photoMessage}}
+          </div>
         </div>
       </div>
       <div class="col-md-8  border-secondary shadow-lg  bg-white rounded py-5">
@@ -80,6 +83,7 @@
             <h5>{{name}}</h5>
             <h5 class="icon"><a data-toggle="modal" class="text-info" data-target="#editName"><i
                   class="far fa-edit"></i> Edit Name</a>
+                   
             </h5>
 
           </div>
@@ -149,6 +153,9 @@
                 <input formControlName='name' type="text" class="form-control w-75 mx-2">
 
               </div>
+              <div class="alert alert-info my-2" *ngIf='nameMessage' role="alert">
+                {{nameMessage}}
+              </div>
               <div *ngIf="editNameForm.controls.name.invalid&&editNameForm.controls.name.touched "
                 class="alert alert-danger mt-2 "> Name Not Vaild</div>
               <div class="modal-footer">
@@ -200,7 +207,9 @@
                 class="alert alert-danger mt-2"> Confirm Password Not Mtch</div>
 
             </div>
-
+            <div class="alert alert-info my-2" *ngIf='passwordMessage' role="alert">
+              {{passwordMessage}}
+            </div>
             <div class="modal-footer">
               <button [disabled]='editPassForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
                 Password</button>
@@ -235,7 +244,9 @@
               <div *ngIf="editPhonesForm.controls.phones.invalid&&editPhonesForm.controls.phones.touched "
                 class="alert alert-danger mt-2"> Number Not Vaild</div>
             </div>
-
+            <div class="alert alert-info my-2" *ngIf='phoneMessage' role="alert">
+              {{phoneMessage}}
+            </div>
             <div class="modal-footer">
               <button [disabled]='editPhonesForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
                 Phone</button>
@@ -290,7 +301,9 @@
 
             </div>
 
-
+            <div class="alert alert-info my-2" *ngIf='addressMessage' role="alert">
+              {{addressMessage}}
+            </div>
             <div class="modal-footer">
               <button [disabled]='editAddressForm.invalid' class="btn btn-info w-auto m-auto" type="submit">Edit
                 Address</button>
@@ -324,7 +337,9 @@
             <div class="alert alert-primary w-100 mt-2">Press on location selector on the map then press edit </div>
 
 
-
+            <div class="alert alert-info my-2" *ngIf='locationMessage' role="alert">
+              {{locationMessage}}
+            </div>
             <div class="modal-footer">
               <button [disabled]='checkNolocation()' class="btn btn-info w-auto m-auto " type="submit">Edit
                 location</button>

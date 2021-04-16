@@ -241,16 +241,16 @@ isLogged(){
   editPhoto()
   {
     if(this.url!=null){
-
-    };
-    
-    this._EditProfileService.editCustomerPhoto(this.url).subscribe(d => {
+this._EditProfileService.editCustomerPhoto(this.url).subscribe(d => {
       this.photoMessage=d.message;
       console.log(d)
     },
       err => {
         console.log(err);
       })
+    };
+    
+    
 
   
   }

@@ -28,15 +28,15 @@
     color: #000;
     font-weight: 500;
 }
-li{
-    list-style-image: url('../../assets/images/home/pill.svg');
+// li{
+//     list-style-image: url('../../assets/images/home/pill.svg');
     
 
-}
-li::marker {
-    font-size: 3rem; /* You can use px, but I think rem is more respecful */
-    color: $mainColor;
-}
+// }
+// li::marker {
+//     font-size: 3rem; /* You can use px, but I think rem is more respecful */
+//     color: $mainColor;
+// }
 .test{
     text-decoration: underline;
 }

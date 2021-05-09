@@ -3,12 +3,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderService } from '../services/order.service';
 import{GetAllMedicineService} from '../services/get-all-medicine.service';
+import {Observable, OperatorFunction} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+
   allMedicineData:any;
   isOrderd:boolean=true;
   isClicked:any=false;
@@ -107,6 +110,28 @@ export class OrderComponent implements OnInit {
       console.log(err);
     })}
 
+    states:any = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
+    'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
+    'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
+    'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
+    'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+    'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
+    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
+    'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+  
+    public model: any;
+  
+    formatter = (result: string) => result.toUpperCase();
+  
+    search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+      text$.pipe(
+        debounceTime(200),
+        distinctUntilChanged(),
+        map(term => term === '' ? []
+          : this.states.filter((v: any) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+      )
+  
+  
 
 
   ngOnInit(): void {

@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { OrderHistoryService } from '../services/order-history.service';
 import{ActivatedRoute}from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
+import { NgbAlertModule, NgbPaginationModule, NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-get-one-order',
   templateUrl: './get-one-order.component.html',
-  styleUrls: ['./get-one-order.component.scss']
+  styleUrls: ['./get-one-order.component.scss'],
+  providers: [NgbRatingConfig]
 })
 export class GetOneOrderComponent implements OnInit {
-
+  currentRate = 2;
   oneOrderData:any;
   pharmacyData:any;
   orderId:any;
@@ -21,7 +23,12 @@ export class GetOneOrderComponent implements OnInit {
   globalStatus:any;
   orderByTexting:any;
   orderByPhoto:any;
-  constructor(_ActivatedRoute:ActivatedRoute,_orderHistoryService:OrderHistoryService) { 
+  rate:any;
+
+  constructor(_ActivatedRoute:ActivatedRoute,_orderHistoryService:OrderHistoryService,config: NgbRatingConfig) { 
+    config.max = 5;
+
+    config.readonly = true;
     this.orderId =  _ActivatedRoute.snapshot.paramMap.get('currentOrder')
 
     _orderHistoryService.oneOrder(this.orderId).subscribe(
@@ -39,6 +46,8 @@ export class GetOneOrderComponent implements OnInit {
           this.globalStatus=this.oneOrderData.globalStatus;
           this.orderByTexting=this.oneOrderData.orderByTexting;
           this.orderByPhoto=this.oneOrderData.orderByPhoto;
+          this.rate=this.oneOrderData.rate;
+          console.log(this.rate)
                  console.log(data);
         }
         else if (data.message="no order founds") {

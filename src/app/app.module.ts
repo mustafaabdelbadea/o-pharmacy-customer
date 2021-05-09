@@ -28,6 +28,7 @@ import { SearchPharmacyPipe } from './pipe/search-pharmacy.pipe';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchMedicinePipe } from './pipe/search-medicine.pipe';
+import { NgbAlertModule, NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -64,8 +65,10 @@ import { SearchMedicinePipe } from './pipe/search-medicine.pipe';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxTypedJsModule
-
+    NgxTypedJsModule,
+    NgbPaginationModule,
+     NgbAlertModule,
+     NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

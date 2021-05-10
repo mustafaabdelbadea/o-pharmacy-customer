@@ -1,7 +1,78 @@
+<div class="mainDiv my-4">
 
-<div class="d-flex justify-content-around row py-4 w-100" >
+        <div *ngIf="history==null"  class="container ">
+            <div class="row m-auto">
+              <div class="col-md-12   border-secondary shadow-lg  bg-white rounded py-5 text-center">
+                  <h5 class="text-center">You do not have a medical history</h5>
+                  <h4 class="text-center">Do you want to add your medical history</h4>
+                  <a type="button" class="btn btn-primary mt-4" href="http://localhost:4200/customerHistory">ADD medical history</a>      
+              </div>
+          </div>
+        </div>
 
-    <div>{{history}}</div>
+        <div *ngIf="history!=null"  class="container ">
+          <div class="row m-auto">
+            <div class="col-md-12  border-secondary shadow-lg  bg-white rounded py-4">
+              <h2 class="text-center">Medical History<a class="text-info" href="http://localhost:4200/customerHistory"><i class="far fa-edit" style="width: 1rem;height: 1rem;"></i></a></h2>
+              <hr>
+
+                <div class="mx-2">
+                   <h4 class="my-3">Basics </h4>
+                   
+                   <div class="d-flex justify-content-around ">
+
+                       <h5>Blood type: {{bloodType}}</h5>  
+                       <h5>MaritalStatus: {{maritalStatus}}</h5>
+                    </div>
+      
+                </div>
+              
+                <hr>      
+              
+                <div class="mx-2">
+                    <h4 class="my-3">Diseases </h4>
+                    <div class="d-flex justify-content-around ">
+
+                        <h5>Cholesterol: {{Cholesterol}}</h5>  
+                        <h5>Blood Preasure: {{highBloodPreasure}}</h5>
+                        <h5>diabetes: {{diabetes}}</h5>
+                     </div>
+                </div>
+              
+                <hr>    
+
+                <div class="mx-2">
+                    <h4 class="my-3">Habits</h4>
+                    <div class="d-flex justify-content-around ">
+
+                        <h5>exercises: {{doYouExercize}}</h5>  
+                        <h5>alcohol: {{doYouDrinkAlcohol}}</h5>
+                        <h5>Drugs: {{doYouUseDrugs}}</h5>
+                     </div>
+
+                <div class="d-flex justify-content-around mt-3 ">
+                     <h5>smoking: {{doYouSmoke}}</h5>
+                     <h5>vape: {{doYouVape}}</h5>
+                </div>
+
+                </div>
+
+                <hr>
+                
+                <div class="mx-2">
+                    <h4 class="my-3">Other </h4>
+
+                    <div class="d-flex justify-content-between px-5">
+                        <h5>Health conditions: {{doYouHaveOtherHealthConditions}}</h5>
+                     </div>
+                <div class="d-flex justify-content-between mt-3 px-5 ">
+                     <h5>Concerns: {{patientConcerns}}</h5>
+                </div>
 
 
-</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>

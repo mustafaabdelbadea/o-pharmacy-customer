@@ -17,7 +17,7 @@
         <div class="input-group my-5">
           <!-- <input type="text" class="form-control " id="searchInput" placeholder="Search for medicine"> -->
           
-<input id="typeahead-format" type="text" class="form-control" placeholder="Search for medicine" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" />
+<input id="typeahead-format"  type="text" class="form-control" placeholder="Search for medicine" [(ngModel)]="model" [ngbTypeahead]="search" [resultFormatter]="formatter" [inputFormatter]="inputFormatBandListValue"/>
         </div>
         <div class="row d-flex justify-content-between text-center">
           <div class="col-md-3 my-3">
@@ -34,7 +34,7 @@
             <h5 class="iWords">Upload Your Prescription</h5>
           </div>
           <div class="col-md-3 my-3">
-            <label for="searchInput">
+            <label for="typeahead-format">
               <i class="tablets fas fa-search fa-4x p-3"></i>
             </label>
             <h5 class="iWords"> Search For Medicine</h5>
@@ -54,7 +54,7 @@
     <div class="col-md-6">
       <form [formGroup]='orderForm' class="w-100 container m-auto py-5" (ngSubmit)='order()'>
         <div class="form-group">
-          <textarea class="form-control" formControlName='orderByTexting' id="write-order" rows="10"></textarea>
+          <textarea class="form-control" #textField  formControlName='orderByTexting' id="write-order" rows="10"></textarea>
 
           <div *ngIf='!isOrderd' class="alert alert-danger mt-2"> Please Enter Your Order</div>
 

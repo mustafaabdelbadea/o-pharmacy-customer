@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerHistoryService} from '../services/customer-history.service'
+import jwt_decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-get-medical-history',
@@ -7,22 +9,32 @@ import {CustomerHistoryService} from '../services/customer-history.service'
   styleUrls: ['./get-medical-history.component.scss']
 })
 export class GetMedicalHistoryComponent implements OnInit {
-  
-   history:any;
-   bloodType:any;
-   maritalStatus:any;
-   Cholesterol:any;
-   highBloodPreasure:any;
-   diabetes:any;
-   doYouSmoke:any;
-   doYouVape:any; 
-   doYouDrinkAlcohol:any;
-   doYouUseDrugs:any;
-   doYouExercize:any;
-   patientConcerns:any;
-   doYouHaveOtherHealthConditions:any;
+
+  token:any=localStorage.getItem('token');
+  decoded:any ;
+  name:any;
+  age:any;
+  gender:any;
+  history:any;
+  bloodType:any;
+  maritalStatus:any;
+  Cholesterol:any;
+  highBloodPreasure:any;
+  diabetes:any;
+  doYouSmoke:any;
+  doYouVape:any; 
+  doYouDrinkAlcohol:any;
+  doYouUseDrugs:any;
+  doYouExercize:any;
+  patientConcerns:any;
+  doYouHaveOtherHealthConditions:any;
 
   constructor(private _CustomerHistoryService:CustomerHistoryService) { 
+    this.decoded = jwt_decode(this.token);
+    console.log(this.decoded);
+    this.name=this.decoded.name;
+    this.gender=this.decoded.gender;
+    this.age=this.decoded.age;
 
     _CustomerHistoryService.gethistory().subscribe( (data)=>{
         

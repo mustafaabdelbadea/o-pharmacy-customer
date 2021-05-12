@@ -1,45 +1,77 @@
+<div class="container my-4 mx-auto">
 
-<div class="container py-5">
+            <form class="p-0 m-0" [formGroup]="medicalHistoryForm" (ngSubmit)="enterhistory()">
 
-    <form [formGroup]="medicalHistoryForm" (ngSubmit)="enterhistory()">
+                <div class="form-group">
+                    <input formControlName="doYouHaveDiabates" class="form-check-input" type="checkbox"
+                        id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Do you have Diabates</label> <br>
 
-        
-        <input formControlName="doYouHaveDiabates" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">Do you have Diabates</label> <br>
-          
-  <input formControlName="highBloodPreasure" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">High blood preasure</label><br>
+                    <input formControlName="highBloodPreasure" class="form-check-input" type="checkbox"
+                        id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">High blood preasure</label><br>
 
-  <input formControlName="highCholestrol" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">high Cholestrol</label><br>
+                    <input formControlName="highCholestrol" class="form-check-input" type="checkbox"
+                        id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">high Cholestrol</label><br>
 
-  <input formControlName="doYousmoke" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">do You smoke</label><br>
+                    <input formControlName="doYousmoke" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">do You smoke</label><br>
 
-  <input formControlName="doYouVape" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">do You Vape</label><br>
+                    <input formControlName="doYouVape" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">do You Vape</label><br>
 
-  <input formControlName="doYouDrinkAlcohol" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">do You Drink Alcohol</label><br>
+                    <input formControlName="doYouDrinkAlcohol" class="form-check-input" type="checkbox"
+                        id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">do You Drink Alcohol</label><br>
 
-  <input formControlName="doYouUseDrugs" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">do You use Drugs</label><br>
+                    <input formControlName="doYouUseDrugs" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">do You use Drugs</label><br>
 
-  <input formControlName="doYouExersize" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label" for="inlineCheckbox1">doYouExersize</label><br><br>
+                    <input formControlName="doYouExersize" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">doYouExersize</label><br><br>
+                </div>
+                <div class="form-group">
+                    <label class="form-check-label" for="inlineCheckbox1">marital Status: </label>
+                    <select class="form-control w-25 d-inline-flex ml-1 mr-3 mb-5 p-1"
+                        formControlName="whatsYourMAritalStatus" placeholder="what is your marital Status ?">
+                        <option SELECTED> Married </option>
+                        <option>Single</option>
+                    </select>
 
-  <label class="form-check-label" for="inlineCheckbox1"> marital Status</label>
-  <input formControlName="whatsYourMAritalStatus" placeholder="what is your marital Status ?"  class="form-control mb-5">
-  
-  <label class="form-check-label" for="inlineCheckbox1"> blood type</label>
-  <input formControlName="bloodType" placeholder="What is blood type ?"  class="form-control mb-5">
-  
-  <label class="form-check-label" for="inlineCheckbox1"> Health Conditions</label>
-  <input formControlName="doYouHaveOtherHealthConditions" placeholder="do You Have Other Health Conditions ?"  class="form-control mb-5">
-  
-  <label class="form-check-label" for="inlineCheckbox1"> concerns</label>
-  <input formControlName="patientConcerns" placeholder="Do you want to add any concerns ?"  class="form-control mb-5">
+                    <label class="form-check-label" for="inlineCheckbox1"> blood type:</label>
+                    <select formControlName="bloodType" class="form-control w-25 ml-1 d-inline-flex mb-5">
+                        <option SELECTED>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select><br>
+                </div>
 
-  <button  type="submit" class="btn btn-primary">submit</button>
-    </form>
+                <label class="form-check-label" for="inlineCheckbox1">Health Conditions:</label>
+                <input formControlName="doYouHaveOtherHealthConditions"
+                    placeholder="do You Have Other Health Conditions ?"
+                    class="form-control w-25 ml-1 d-inline-flex mb-5 mr-3">
+
+                <label class="form-check-label" for="inlineCheckbox1">concerns:</label>
+                <input formControlName="patientConcerns" placeholder="Do you want to add any concerns ?"
+                    class="form-control w-25 ml-1 d-inline-flex mb-5">
+                <br>
+
+                <div *ngIf="result=='updated'" class="alert alert-info w-50" role="alert">
+                    updated
+                </div>
+                <div *ngIf="result=='success'" class="alert alert-info w-50" role="alert">
+                    added
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
 </div>

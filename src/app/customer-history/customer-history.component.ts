@@ -12,9 +12,10 @@ import {Validators} from '@angular/forms'
   templateUrl: './customer-history.component.html',
   styleUrls: ['./customer-history.component.scss']
 })
+
+
 export class CustomerHistoryComponent implements OnInit {
-
-
+  result:any;
    medicalHistoryForm = new FormGroup({
 
     'doYouHaveDiabates' : new FormControl (false,),
@@ -65,8 +66,8 @@ export class CustomerHistoryComponent implements OnInit {
 
 
     this._CustomerHistoryService.enterhistory(data).subscribe(d => {
-      console.log(data)
       console.log(d)
+      this.result=d;
     },
       err => {
         console.log(err);

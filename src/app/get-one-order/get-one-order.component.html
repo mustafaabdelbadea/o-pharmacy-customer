@@ -66,38 +66,30 @@
                 <label for="star1" title="text">1 star</label>
               </div> -->
               <div *ngIf='rate'>
-                <ngb-rating [rate]="rate"></ngb-rating>
+                <ngb-rating [rate]="rate" class="star"></ngb-rating>
               </div>
 
-              <!-- <div *ngIf='rate'>
-                <p>Custom rating template provided as child element</p>
-
-                <ngb-rating [(rate)]="currentRate">
-                  <ng-template let-fill="fill" let-index="index">
-                    <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
-                  </ng-template>
-                </ngb-rating>
-                <hr>
-                <pre>Rate: <b>{{currentRate}}</b></pre>
-              </div> -->
-            </div>
+              <div *ngIf='!rate'>
+                <ngb-rating [(rate)]="currentRate" class="star" (rateChange)="updateRating()"></ngb-rating>
+              </div> 
+              </div>
 
 
 
-            <div class="col-sm-8 col-md-8 col-lg-8 justify-content-end">
-              <img class="img-fluid" *ngIf="orderByPhoto!=null" src="{{orderByPhoto}}" alt="">
-              <img class="img-fluid" *ngIf="orderByPhoto==null"
-                src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" alt="">
+              <div class="col-sm-8 col-md-8 col-lg-8 justify-content-end">
+                <img class="img-fluid" *ngIf="orderByPhoto!=null" src="{{orderByPhoto}}" alt="">
+                <img class="img-fluid" *ngIf="orderByPhoto==null"
+                  src="../../assets/images/getAllPharmacies/6686e7a77f36f814819125b0d81b9ffa.png" alt="">
+              </div>
+
             </div>
 
           </div>
 
         </div>
 
+
+
+
       </div>
-
-
-
-
     </div>
-  </div>

@@ -5,13 +5,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ReportService {
+  httpOptions = {
+    headers: new HttpHeaders({
+   'token':'Bearer' + localStorage.getItem('token')
+
+    }) 
+        
+    }
 
   baseUrl = "http://localhost:3000/";
   constructor(private _http: HttpClient) {
   }
-  rate(rating:any): Observable<any> {
-    return this._http.post(this.baseUrl + "rate", rating,{ headers: new HttpHeaders({'token': 'Bearer' + localStorage.getItem('token')})
-  });
+  rate(rate:any,report:any,orderId:any): Observable<any> {
+    return this._http.post(this.baseUrl + "rate", {rate,report,orderId},this.httpOptions);
   }
 
   reportProblem(problemData: any): Observable<any> {

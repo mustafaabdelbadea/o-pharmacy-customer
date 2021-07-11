@@ -137,7 +137,7 @@ export class OrderComponent implements OnInit {
       return value.name
     }
     //to get old value from text box then add search value
-    $("#write-order").val($("#write-order").val() + '\n '+value) ;
+    $("#write-order").val($("#write-order").val() +value+ '\n') ;
     return value;
 
   }
